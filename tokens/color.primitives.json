@@ -1,0 +1,97 @@
+{
+  "$schema": "https://design-tokens.org/schema/v1",
+  "$description": "Primitive color tokens — generated from Figma variables. Never reference these directly in component CSS. Use semantic aliases or apply directly only in isolated single-consumer components.",
+
+  "primitives": {
+
+    "primary": {
+      "$description": "Themed. Regenerated when user changes primary seed color.",
+      "primary-80":          { "$value": "#d1d0f5", "$type": "color", "$description": "Mostly used for element borders" },
+      "primary-40":          { "$value": "#7673e2", "$type": "color", "$description": "Mostly used for icons that need to be highlighted" },
+      "primary-0":           { "$value": "#1b15cf", "$type": "color", "$description": "Primary color main variable — icons, main action buttons" },
+      "primary-dark-40":     { "$value": "#100d7c", "$type": "color", "$description": "Rarely used directly" },
+      "primary-dark-80":     { "$value": "#050429", "$type": "color", "$description": "Rarely used directly" },
+      "primary-dark-40-16":  { "$value": "#100d7c29", "$type": "color", "$description": "Element borders, subtle primary tint" },
+      "primary-dark-40-12":  { "$value": "#100d7c1f", "$type": "color", "$description": "Additional shade" },
+      "primary-dark-40-8":   { "$value": "#100d7c14", "$type": "color", "$description": "Active state background or border color" }
+    },
+
+    "secondary": {
+      "$description": "Themed. Regenerated when user changes secondary seed color.",
+      "secondary-80":          { "$value": "#ffede0", "$type": "color", "$description": "Rarely used directly" },
+      "secondary-80-48":       { "$value": "#ffede07a", "$type": "color", "$description": "Background for side navigation panels" },
+      "secondary-40":          { "$value": "#ffcaa2", "$type": "color", "$description": "Rarely used directly" },
+      "secondary-0":           { "$value": "#ffa764", "$type": "color", "$description": "Rarely used directly" },
+      "secondary-dark-40":     { "$value": "#99643c", "$type": "color", "$description": "Rarely used directly" },
+      "secondary-dark-80":     { "$value": "#332114", "$type": "color", "$description": "Rarely used directly" },
+      "secondary-dark-40-16":  { "$value": "#99643c29", "$type": "color", "$description": "Background for active tabs and buttons" },
+      "secondary-dark-40-12":  { "$value": "#99643c1f", "$type": "color", "$description": "Additional shade" },
+      "secondary-dark-40-8":   { "$value": "#99643c14", "$type": "color", "$description": "Additional shade" }
+    },
+
+    "neutral": {
+      "$description": "Not themed. Fixed across all tenants.",
+      "white":            { "$value": "#ffffff", "$type": "color" },
+      "neutral-scale-1":  { "$value": "#1c1d21", "$type": "color", "$description": "Darkest — primary text" },
+      "neutral-scale-2":  { "$value": "#47494e", "$type": "color", "$description": "Secondary text" },
+      "neutral-scale-3":  { "$value": "#73757c", "$type": "color", "$description": "Tertiary text, placeholders" },
+      "neutral-scale-4":  { "$value": "#90929a", "$type": "color", "$description": "Disabled text, subtle icons" },
+      "neutral-scale-5":  { "$value": "#e6e7ea", "$type": "color", "$description": "Borders, dividers" },
+      "neutral-scale-6":  { "$value": "#efeff1", "$type": "color", "$description": "Subtle backgrounds" },
+      "neutral-scale-7":  { "$value": "#f7f7f8", "$type": "color", "$description": "Page background, lightest surface" }
+    },
+
+    "system-color": {
+      "$description": "Status colors — fixed, not themed.",
+      "red-scale-1":    { "$value": "#e68260", "$type": "color", "$description": "Error — strong" },
+      "red-scale-2":    { "$value": "#eb9b80", "$type": "color", "$description": "Error — medium" },
+      "red-scale-3":    { "$value": "#f5cdbf", "$type": "color", "$description": "Error — light" },
+      "red-scale-4":    { "$value": "#fae6df", "$type": "color", "$description": "Error — subtle bg" },
+      "red-scale-5":    { "$value": "#fcf2ef", "$type": "color", "$description": "Error — lightest bg" },
+      "green-scale-1":  { "$value": "#82b094", "$type": "color", "$description": "Success — strong" },
+      "green-scale-2":  { "$value": "#9bc0a9", "$type": "color", "$description": "Success — medium" },
+      "green-scale-3":  { "$value": "#b4d0bf", "$type": "color", "$description": "Success — light" },
+      "green-scale-4":  { "$value": "#d9e7df", "$type": "color", "$description": "Success — subtle bg" },
+      "green-scale-5":  { "$value": "#f2f7f4", "$type": "color", "$description": "Success — lightest bg" }
+    },
+
+    "chart-colors": {
+      "$description": "Data visualization palette — fixed, not themed.",
+      "chart-1":   { "$value": "#5362db", "$type": "color" },
+      "chart-2":   { "$value": "#ee7d60", "$type": "color" },
+      "chart-3":   { "$value": "#97dfd8", "$type": "color" },
+      "chart-4":   { "$value": "#efbe56", "$type": "color" },
+      "chart-5":   { "$value": "#84bcef", "$type": "color" },
+      "chart-6":   { "$value": "#73b5af", "$type": "color" },
+      "chart-7":   { "$value": "#f4b583", "$type": "color" },
+      "chart-8":   { "$value": "#c083d7", "$type": "color" },
+      "chart-9":   { "$value": "#a75e6e", "$type": "color" },
+      "chart-10":  { "$value": "#397c9d", "$type": "color" }
+    },
+
+    "supportive-palette": {
+      "$description": "Fixed accent colors — not themed. Used for stage labels, tags, category indicators. Each color has 3 shades: primary (strong, for text/icon), medium (for borders/mid), light (for backgrounds).",
+      "orange-primary": { "$value": "#fda240", "$type": "color" },
+      "orange-medium":  { "$value": "#fde5cb", "$type": "color" },
+      "orange-light":   { "$value": "#fff6ec", "$type": "color" },
+      "blue-primary":   { "$value": "#5493bd", "$type": "color" },
+      "blue-medium":    { "$value": "#cde3ef", "$type": "color" },
+      "blue-light":     { "$value": "#f4f9fb", "$type": "color" },
+      "red-primary":    { "$value": "#e68260", "$type": "color" },
+      "red-medium":     { "$value": "#f5cdbf", "$type": "color" },
+      "red-light":      { "$value": "#fcf2ef", "$type": "color" },
+      "green-primary":  { "$value": "#609872", "$type": "color" },
+      "green-medium":   { "$value": "#dcebdd", "$type": "color" },
+      "green-light":    { "$value": "#f2f7f4", "$type": "color" },
+      "purple-primary": { "$value": "#a47cc0", "$type": "color" },
+      "purple-medium":  { "$value": "#e8ddef", "$type": "color" },
+      "purple-light":   { "$value": "#fbf4ff", "$type": "color" },
+      "brown-primary":  { "$value": "#b2957a", "$type": "color" },
+      "brown-medium":   { "$value": "#ede5db", "$type": "color" },
+      "brown-light":    { "$value": "#f9f6f4", "$type": "color" },
+      "gray-primary":   { "$value": "#8f8f8f", "$type": "color" },
+      "gray-medium":    { "$value": "#dfdfdf", "$type": "color" },
+      "gray-light":     { "$value": "#f5f5f5", "$type": "color" }
+    }
+  }
+}

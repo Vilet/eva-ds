@@ -1,0 +1,50 @@
+{
+  "$schema": "https://design-tokens.org/schema/v1",
+  "$description": "Semantic color aliases — built directly from Figma variables.",
+
+  "color": {
+
+    "interactive-primary": {
+      "$description": "Filled action buttons — primary palette. Themed.",
+      "default":        { "$value": "{primitives.primary.primary-0}",          "$type": "color" },
+      "hover":          { "$value": "{primitives.primary.primary-dark-40}",    "$type": "color" },
+      "disabled":       { "$value": "{primitives.primary.primary-40}",         "$type": "color" },
+      "border-default": { "$value": "{primitives.primary.primary-dark-40-12}", "$type": "color" },
+      "border-hover":   { "$value": "{primitives.primary.primary-dark-40-16}", "$type": "color" },
+      "border-active":  { "$value": "{primitives.primary.primary-40}",         "$type": "color" }
+    },
+
+    "interactive-secondary": {
+      "$description": "Bordered buttons — secondary palette. Themed.",
+      "bg-default":     { "$value": "transparent",                                     "$type": "color" },
+      "bg-highlighted": { "$value": "{primitives.secondary.secondary-dark-40-8}",      "$type": "color" },
+      "bg-hover":       { "$value": "{primitives.secondary.secondary-dark-40-8}",      "$type": "color" },
+      "bg-active":      { "$value": "{primitives.secondary.secondary-dark-40-12}",     "$type": "color" },
+      "border-default": { "$value": "{primitives.secondary.secondary-dark-40-12}",     "$type": "color" },
+      "border-hover":   { "$value": "{primitives.secondary.secondary-dark-40-16}",     "$type": "color" },
+      "border-active":  { "$value": "{primitives.secondary.secondary-dark-40-8}",      "$type": "color" }
+    },
+
+    "surface": {
+      "$description": "Resting container backgrounds and borders. Not gesture-triggered.",
+      "card-bg":             { "$value": "{primitives.neutral.white}",                    "$type": "color" },
+      "card-bg-highlighted": { "$value": "{primitives.secondary.secondary-dark-40-8}",    "$type": "color" },
+      "sidepanel-bg":        { "$value": "{primitives.secondary.secondary-80-48}",        "$type": "color" },
+      "sidepanel-border":    { "$value": "{primitives.secondary.secondary-dark-40-8}",    "$type": "color" },
+      "tab-active":          { "$value": "{primitives.secondary.secondary-dark-40-12}",   "$type": "color" }
+    },
+
+    "neutral": {
+      "$description": "Neutral scale aliases for text, borders, neutral surfaces. Not themed.",
+      "neutral-1":     { "$value": "{primitives.neutral.neutral-scale-1}", "$type": "color" },
+      "neutral-2":     { "$value": "{primitives.neutral.neutral-scale-2}", "$type": "color" },
+      "neutral-3":     { "$value": "{primitives.neutral.neutral-scale-3}", "$type": "color" },
+      "neutral-4":     { "$value": "{primitives.neutral.neutral-scale-4}", "$type": "color" },
+      "neutral-5":     { "$value": "{primitives.neutral.neutral-scale-5}", "$type": "color" },
+      "neutral-6":     { "$value": "{primitives.neutral.neutral-scale-6}", "$type": "color" },
+      "neutral-7":     { "$value": "{primitives.neutral.neutral-scale-7}", "$type": "color" },
+      "neutral-8-white": { "$value": "{primitives.neutral.white}",         "$type": "color" }
+    }
+
+  }
+}
