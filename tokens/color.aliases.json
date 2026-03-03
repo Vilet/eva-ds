@@ -1,7 +1,4 @@
 {
-  "$schema": "https://design-tokens.org/schema/v1",
-  "$description": "Semantic color aliases — built directly from Figma variables.",
-
   "color": {
 
     "interactive-primary": {

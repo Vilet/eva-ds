@@ -1,7 +1,4 @@
 {
-  "$schema": "https://design-tokens.org/schema/v1",
-  "$description": "Primitive color tokens — generated from Figma variables. Never reference these directly in component CSS. Use semantic aliases or apply directly only in isolated single-consumer components.",
-
   "primitives": {
 
     "primary": {

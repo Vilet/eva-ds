@@ -1,0 +1,98 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-interactive-secondary-bg-default: rgba(0, 0, 0, 0);
+  --primitives-primary-primary-80: #d1d0f5; /** Mostly used for element borders */
+  --primitives-primary-primary-40: #7673e2; /** Mostly used for icons that need to be highlighted */
+  --primitives-primary-primary-0: #1b15cf; /** Primary color main variable — icons, main action buttons */
+  --primitives-primary-primary-dark-40: #100d7c; /** Rarely used directly */
+  --primitives-primary-primary-dark-80: #050429; /** Rarely used directly */
+  --primitives-primary-primary-dark-40-16: rgba(16, 13, 124, 0.16); /** Element borders, subtle primary tint */
+  --primitives-primary-primary-dark-40-12: rgba(16, 13, 124, 0.12); /** Additional shade */
+  --primitives-primary-primary-dark-40-8: rgba(16, 13, 124, 0.08); /** Active state background or border color */
+  --primitives-secondary-secondary-80: #ffede0; /** Rarely used directly */
+  --primitives-secondary-secondary-80-48: rgba(255, 237, 224, 0.48); /** Background for side navigation panels */
+  --primitives-secondary-secondary-40: #ffcaa2; /** Rarely used directly */
+  --primitives-secondary-secondary-0: #ffa764; /** Rarely used directly */
+  --primitives-secondary-secondary-dark-40: #99643c; /** Rarely used directly */
+  --primitives-secondary-secondary-dark-80: #332114; /** Rarely used directly */
+  --primitives-secondary-secondary-dark-40-16: rgba(153, 100, 60, 0.16); /** Background for active tabs and buttons */
+  --primitives-secondary-secondary-dark-40-12: rgba(153, 100, 60, 0.12); /** Additional shade */
+  --primitives-secondary-secondary-dark-40-8: rgba(153, 100, 60, 0.08); /** Additional shade */
+  --primitives-neutral-white: #ffffff;
+  --primitives-neutral-neutral-scale-1: #1c1d21; /** Darkest — primary text */
+  --primitives-neutral-neutral-scale-2: #47494e; /** Secondary text */
+  --primitives-neutral-neutral-scale-3: #73757c; /** Tertiary text, placeholders */
+  --primitives-neutral-neutral-scale-4: #90929a; /** Disabled text, subtle icons */
+  --primitives-neutral-neutral-scale-5: #e6e7ea; /** Borders, dividers */
+  --primitives-neutral-neutral-scale-6: #efeff1; /** Subtle backgrounds */
+  --primitives-neutral-neutral-scale-7: #f7f7f8; /** Page background, lightest surface */
+  --primitives-system-color-red-scale-1: #e68260; /** Error — strong */
+  --primitives-system-color-red-scale-2: #eb9b80; /** Error — medium */
+  --primitives-system-color-red-scale-3: #f5cdbf; /** Error — light */
+  --primitives-system-color-red-scale-4: #fae6df; /** Error — subtle bg */
+  --primitives-system-color-red-scale-5: #fcf2ef; /** Error — lightest bg */
+  --primitives-system-color-green-scale-1: #82b094; /** Success — strong */
+  --primitives-system-color-green-scale-2: #9bc0a9; /** Success — medium */
+  --primitives-system-color-green-scale-3: #b4d0bf; /** Success — light */
+  --primitives-system-color-green-scale-4: #d9e7df; /** Success — subtle bg */
+  --primitives-system-color-green-scale-5: #f2f7f4; /** Success — lightest bg */
+  --primitives-chart-colors-chart-1: #5362db;
+  --primitives-chart-colors-chart-2: #ee7d60;
+  --primitives-chart-colors-chart-3: #97dfd8;
+  --primitives-chart-colors-chart-4: #efbe56;
+  --primitives-chart-colors-chart-5: #84bcef;
+  --primitives-chart-colors-chart-6: #73b5af;
+  --primitives-chart-colors-chart-7: #f4b583;
+  --primitives-chart-colors-chart-8: #c083d7;
+  --primitives-chart-colors-chart-9: #a75e6e;
+  --primitives-chart-colors-chart-10: #397c9d;
+  --primitives-supportive-palette-orange-primary: #fda240;
+  --primitives-supportive-palette-orange-medium: #fde5cb;
+  --primitives-supportive-palette-orange-light: #fff6ec;
+  --primitives-supportive-palette-blue-primary: #5493bd;
+  --primitives-supportive-palette-blue-medium: #cde3ef;
+  --primitives-supportive-palette-blue-light: #f4f9fb;
+  --primitives-supportive-palette-red-primary: #e68260;
+  --primitives-supportive-palette-red-medium: #f5cdbf;
+  --primitives-supportive-palette-red-light: #fcf2ef;
+  --primitives-supportive-palette-green-primary: #609872;
+  --primitives-supportive-palette-green-medium: #dcebdd;
+  --primitives-supportive-palette-green-light: #f2f7f4;
+  --primitives-supportive-palette-purple-primary: #a47cc0;
+  --primitives-supportive-palette-purple-medium: #e8ddef;
+  --primitives-supportive-palette-purple-light: #fbf4ff;
+  --primitives-supportive-palette-brown-primary: #b2957a;
+  --primitives-supportive-palette-brown-medium: #ede5db;
+  --primitives-supportive-palette-brown-light: #f9f6f4;
+  --primitives-supportive-palette-gray-primary: #8f8f8f;
+  --primitives-supportive-palette-gray-medium: #dfdfdf;
+  --primitives-supportive-palette-gray-light: #f5f5f5;
+  --color-interactive-primary-default: var(--primitives-primary-primary-0);
+  --color-interactive-primary-hover: var(--primitives-primary-primary-dark-40);
+  --color-interactive-primary-disabled: var(--primitives-primary-primary-40);
+  --color-interactive-primary-border-default: var(--primitives-primary-primary-dark-40-12);
+  --color-interactive-primary-border-hover: var(--primitives-primary-primary-dark-40-16);
+  --color-interactive-primary-border-active: var(--primitives-primary-primary-40);
+  --color-interactive-secondary-bg-highlighted: var(--primitives-secondary-secondary-dark-40-8);
+  --color-interactive-secondary-bg-hover: var(--primitives-secondary-secondary-dark-40-8);
+  --color-interactive-secondary-bg-active: var(--primitives-secondary-secondary-dark-40-12);
+  --color-interactive-secondary-border-default: var(--primitives-secondary-secondary-dark-40-12);
+  --color-interactive-secondary-border-hover: var(--primitives-secondary-secondary-dark-40-16);
+  --color-interactive-secondary-border-active: var(--primitives-secondary-secondary-dark-40-8);
+  --color-surface-card-bg: var(--primitives-neutral-white);
+  --color-surface-card-bg-highlighted: var(--primitives-secondary-secondary-dark-40-8);
+  --color-surface-sidepanel-bg: var(--primitives-secondary-secondary-80-48);
+  --color-surface-sidepanel-border: var(--primitives-secondary-secondary-dark-40-8);
+  --color-surface-tab-active: var(--primitives-secondary-secondary-dark-40-12);
+  --color-neutral-neutral-1: var(--primitives-neutral-neutral-scale-1);
+  --color-neutral-neutral-2: var(--primitives-neutral-neutral-scale-2);
+  --color-neutral-neutral-3: var(--primitives-neutral-neutral-scale-3);
+  --color-neutral-neutral-4: var(--primitives-neutral-neutral-scale-4);
+  --color-neutral-neutral-5: var(--primitives-neutral-neutral-scale-5);
+  --color-neutral-neutral-6: var(--primitives-neutral-neutral-scale-6);
+  --color-neutral-neutral-7: var(--primitives-neutral-neutral-scale-7);
+  --color-neutral-neutral-8-white: var(--primitives-neutral-white);
+}
