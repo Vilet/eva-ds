@@ -1,0 +1,46 @@
+{
+  "spacing": {
+    "xxsm": {
+      "$value": "2",
+      "$type": "dimension",
+      "$description": "Gap between text blocks"
+    },
+    "xsm": {
+      "$value": "4",
+      "$type": "dimension",
+      "$description": "Gap between text blocks, round padding for small list items, side padding for small buttons"
+    },
+    "sm": {
+      "$value": "8",
+      "$type": "dimension",
+      "$description": "Gap between text blocks, round padding for small list items, side padding for inputs and buttons"
+    },
+    "m": {
+      "$value": "12",
+      "$type": "dimension",
+      "$description": "Round padding for medium list items"
+    },
+    "l": {
+      "$value": "16",
+      "$type": "dimension",
+      "$description": "Round padding for medium-size card items"
+    },
+    "xl": {
+      "$value": "20",
+      "$type": "dimension"
+    },
+    "xxl": {
+      "$value": "24",
+      "$type": "dimension",
+      "$description": "Round padding for large-size card items"
+    },
+    "xxxl": {
+      "$value": "32",
+      "$type": "dimension"
+    },
+    "xxxxl": {
+      "$value": "48",
+      "$type": "dimension"
+    }
+  }
+}

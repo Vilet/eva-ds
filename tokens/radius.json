@@ -1,0 +1,38 @@
+{
+  "radius": {
+    "xxs": {
+      "$value": "4",
+      "$type": "dimension",
+      "$description": "Standard radius for buttons, corner radius for highlighted icons with background, tooltips"
+    },
+    "xs": {
+      "$value": "6",
+      "$type": "dimension",
+      "$description": "Standard radius for buttons, corner radius for highlighted icons with background, tooltips"
+    },
+    "s": {
+      "$value": "8",
+      "$type": "dimension",
+      "$description": "Large buttons, inputs corner radius, small popovers, small cards, medium size list items"
+    },
+    "m": {
+      "$value": "10",
+      "$type": "dimension",
+      "$description": "Corner radius for highlighted icons with background, avatars"
+    },
+    "l": {
+      "$value": "12",
+      "$type": "dimension",
+      "$description": "Corner radius for highlighted icons with background, large cards, large list items, modals"
+    },
+    "xl": {
+      "$value": "16",
+      "$type": "dimension",
+      "$description": "XL cards"
+    },
+    "xxl": {
+      "$value": "24",
+      "$type": "dimension"
+    }
+  }
+}

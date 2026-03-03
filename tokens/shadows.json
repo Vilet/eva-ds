@@ -1,0 +1,34 @@
+{
+  "shadow": {
+    "elev-1": {
+      "$value": "0 0 2px rgba(0, 0, 0, 0.16), 0 2px 2px rgba(33, 9, 9, 0.04)",
+      "$type": "shadow",
+      "$description": "Highlighted/elevated cards and buttons, card hovers"
+    },
+    "elev-2": {
+      "$value": "0 2.175px 5.439px rgba(0, 0, 0, 0.10)",
+      "$type": "shadow",
+      "$description": "AI agent composer block"
+    },
+    "elev-3": {
+      "$value": "0 0 1px rgba(16, 17, 30, 0.32), 0 4px 16px rgba(9, 11, 33, 0.08)",
+      "$type": "shadow",
+      "$description": "Drawer shadow, small popovers, dropdown menu"
+    },
+    "elev-4": {
+      "$value": "0 0 1px rgba(16, 17, 30, 0.32), 0 4px 16px rgba(9, 11, 33, 0.16)",
+      "$type": "shadow",
+      "$description": "Modal shadow"
+    },
+    "elev-red": {
+      "$value": "0 0 5px #FF5473",
+      "$type": "shadow",
+      "$description": "Border input, error state"
+    },
+    "elev-blue": {
+      "$value": "0 0 6px rgba(27, 21, 207, 0.24)",
+      "$type": "shadow",
+      "$description": "Border input, active state — themed, uses primary-0 color"
+    }
+  }
+}
