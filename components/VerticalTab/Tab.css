@@ -8,18 +8,18 @@
   --tab-height:      32px;                        /* M and L */
   --tab-font-size:   var(--font-size-tab-m);
   --tab-icon-size:   var(--icon-size-tab-m);
-  --tab-font-weight-bold: var(--font-weight-semibold);
+  --tab-font-weight-bold: var(--font-weight-medium);
 }
 
 .tab--s {
   --tab-height:    28px;
   --tab-font-size: var(--font-size-tab-s);
-  --tab-icon-size: var(--icon-size-tab-s);
+  /* icon stays at --icon-size-tab-m (16px) — Figma uses same icon size for all tab sizes */
 }
 
 .tab--l {
   --tab-font-size: var(--font-size-tab-l);
-  --tab-icon-size: var(--icon-size-tab-l);
+  /* icon stays at --icon-size-tab-m (16px) — Figma uses same icon size for all tab sizes */
 }
 
 /* ── Root container (default variant) ───────────────────────────────────── */
@@ -29,20 +29,20 @@
   width: 100%;
   height: var(--tab-height);
   border-radius: var(--radius-xs);
+  padding: 0 var(--spacing-sm);
+  gap: var(--spacing-sm);
   position: relative;
   cursor: default;
   user-select: none;
-  transition: background-color 0.1s;
+  transition: background-color 0.4s;
 }
 
-.tab--s { border-radius: var(--radius-xxs); }
-
 .tab:hover {
-  background-color: var(--color-interactive-secondary-bg-hover);
+  background-color: var(--color-interactive-secondary-bg-active);
 }
 
 .tab--active {
-  background-color: var(--color-surface-tab-active);
+  background-color: var(--color-interactive-secondary-bg-active);
 }
 
 /* ── Level indentation ───────────────────────────────────────────────────── */
@@ -56,14 +56,14 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-xsm);
-  padding: 0 var(--spacing-sm);
+  padding: 0;
   background: none;
   border: none;
   cursor: pointer;
   text-align: left;
   font-family: inherit;
   font-size: var(--tab-font-size);
-  font-weight: var(--tab-font-weight-bold); /* semibold for all sizes */
+  font-weight: var(--tab-font-weight-bold); /* medium (500) for all sizes */
   color: var(--color-neutral-neutral-2);
   min-width: 0; /* allow text truncation */
   border-radius: var(--radius-xxs);
@@ -97,7 +97,7 @@
   height: 20px;
   font-size: var(--tab-icon-size);
   line-height: 0;
-  color: var(--color-neutral-neutral-4);
+  color: var(--color-neutral-neutral-2);
   transition: color 0.1s;
 }
 
@@ -111,7 +111,7 @@
 
 /* ── Icon ────────────────────────────────────────────────────────────────── */
 /*
- * 18×18px bounding box (Figma spec). Icon glyph is smaller within.
+ * 18×18px bounding box (Figma spec — overflow: hidden clips any glyph bleed).
  * font-size drives the actual glyph size; box stays fixed at 18px.
  */
 .tab__icon {
@@ -119,11 +119,12 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  overflow: hidden;
   line-height: 0;
   width: 18px;
   height: 18px;
   font-size: var(--tab-icon-size);
-  color: var(--color-neutral-neutral-3);
+  color: var(--color-neutral-neutral-2);
   transition: color 0.1s;
 }
 
@@ -144,26 +145,22 @@
 }
 
 /* ── Count badge ─────────────────────────────────────────────────────────── */
+/*
+ * TODO: flag missing tokens —
+ *   --font-size-count: 11px  (Figma Label/Mini 11-16 — all sizes use 11px)
+ *   --color-text-count       (Figma uses secondary-1 #b2957a, needs semantic alias)
+ */
 .tab__count {
   flex-shrink: 0;
+  align-self: center;
   font-size: var(--tab-font-size);
   color: var(--color-neutral-neutral-3);
-  padding-left: var(--spacing-xsm);
-}
-
-/* Hide count when actions button is visible (hover / active) */
-.tab:hover .tab__count,
-.tab--active .tab__count {
-  opacity: 0;
-  pointer-events: none;
 }
 
 /* ── Actions wrapper (···) ───────────────────────────────────────────────── */
 .tab__actions-wrapper {
-  position: absolute;
-  right: var(--spacing-xxsm);
-  top: 0;
-  bottom: 0;
+  flex-shrink: 0;
+  align-self: center;
   display: flex;
   align-items: center;
   opacity: 0;
@@ -178,51 +175,55 @@
 }
 
 /* ── Nav-icon variant ────────────────────────────────────────────────────── */
+/*
+ * OUTER BUTTON is a transparent frame with padding around the content.
+ * It does NOT receive hover/active background — that goes on the inner body.
+ *
+ * Full-width: outer (px 8, py 4) → inner .tab__nav-body (bg, rounded) → [icon box][label]
+ * Minimized:  outer (px 16, py 4, width auto) → icon box directly (no inner wrapper)
+ *
+ * TODO: replace 36px with --tab-height-nav-icon token when added.
+ */
 .tab--nav-icon {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: var(--spacing-xxsm);
   background: none;
   border: none;
   cursor: pointer;
-  height: auto;
-  border-radius: var(--radius-xs);
-  color: var(--color-neutral-neutral-3);
-  font-family: inherit;
-  font-size: var(--tab-font-size);
+  height: 36px;
   position: relative;
-  transition: background-color 0.1s, color 0.1s;
   width: 100%;
+  padding: var(--spacing-xsm) var(--spacing-sm); /* 4px 8px — full width */
 }
 
-/* Padding per size (nav-icon) */
-.tab--nav-icon.tab--s { padding: var(--spacing-xsm);  }
-.tab--nav-icon.tab--m { padding: var(--spacing-sm);   }
-.tab--nav-icon.tab--l { padding: var(--spacing-sm) var(--spacing-m); }
-
-.tab--nav-icon:hover {
-  background-color: var(--color-interactive-secondary-bg-hover);
-  color: var(--color-neutral-neutral-2);
+/* Minimized: icon box only — intrinsic width, no stretch */
+.tab--nav-icon.tab--minimized {
+  width: auto;
+  padding: var(--spacing-xsm) var(--spacing-l); /* 4px 16px */
+  justify-content: center;
 }
 
+/* No hover/active bg on the outer button — it stays transparent.
+   Background goes on .tab__nav-body (full-width) or .tab__nav-icon-box (minimized). */
+.tab--nav-icon:hover,
 .tab--nav-icon.tab--active {
-  background-color: var(--color-surface-tab-active);
-  color: var(--color-neutral-neutral-1);
+  background-color: transparent;
 }
 
-/* Right-side accent line for active nav-icon */
+/* Right-side accent line — visible on hover AND active */
+.tab--nav-icon:hover::after,
 .tab--nav-icon.tab--active::after {
   content: '';
   position: absolute;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 2px; /* TODO: replace with border token when available */
-  height: 60%;
-  background-color: var(--color-interactive-primary-default);
-  border-radius: var(--radius-xxl);
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: var(--color-interactive-secondary-border-hover); /* secondary-dark-40-16 */
+}
+
+.tab--nav-icon.tab--active::after {
+  background-color: var(--color-neutral-neutral-1); /* black */
 }
 
 .tab--nav-icon:focus-visible {
@@ -230,23 +231,77 @@
   outline: none;
 }
 
-/* Nav-icon icon is larger */
-.tab--nav-icon .tab__icon {
-  color: inherit;
-  transition: none;
+/* ── Nav-icon inner body (full-width only) ───────────────────────────────── */
+/*
+ * This is the "tab colored body" from Figma.
+ * It receives the hover/active background — NOT the outer button.
+ * The outer button's padding creates visible space around this body.
+ */
+.tab__nav-body {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex: 1 0 0;
+  min-width: 0;
+  position: relative;
+  border-radius: var(--radius-xs);
+  transition: background-color 0.1s;
 }
 
-/* TODO: replace with --icon-size-nav-s / -m / -l tokens when added */
-.tab--nav-icon.tab--s .tab__icon { --tab-icon-size: 18px; }
-.tab--nav-icon.tab--m .tab__icon { --tab-icon-size: 22px; }
-.tab--nav-icon.tab--l .tab__icon { --tab-icon-size: 26px; }
+/* Hover: no container fill — only accent line shows */
 
-/* Nav-icon label — small text below icon */
+.tab--nav-icon.tab--active .tab__nav-body {
+  background-color: var(--color-interactive-secondary-bg-active);
+}
+
+/* ── Nav-icon branded icon box ───────────────────────────────────────────── */
+/*
+ * 28×28px container with secondary-highlighted bg and radius-m rounding.
+ * Icon glyph viewbox is 14×14px (top-1/4 to bottom-1/4 of the 28px box).
+ * TODO: replace 28px with --icon-box-nav-size token when added.
+ * TODO: replace --icon-size-tab-s with --icon-size-nav-icon token when added.
+ */
+.tab__nav-icon-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-m);
+  background-color: var(--color-interactive-secondary-bg-highlighted);
+  overflow: hidden;
+  font-size: var(--icon-size-tab-s); /* 14px — matches 14×14 icon viewbox */
+  color: var(--color-neutral-neutral-1);
+  transition: background-color 0.1s;
+}
+
+/* Active only: icon box loses colored fill */
+.tab--nav-icon.tab--active .tab__nav-icon-box {
+  background-color: transparent;
+}
+
+/* ── Nav-icon label ──────────────────────────────────────────────────────── */
+/*
+ * Figma: Label/Med 13-20, shrink-0, neutral-2 default → neutral-1 on hover/active.
+ */
 .tab--nav-icon .tab__label {
-  font-size: var(--tab-font-size);
+  flex: none;
+  font-family: inherit;
+  font-size: var(--font-size-label-med);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-label-med);
+  letter-spacing: var(--letter-spacing-label-med);
+  color: var(--color-neutral-neutral-2);
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
-  max-width: 100%;
-  flex: unset;
+}
+
+.tab--nav-icon:hover .tab__label {
+  color: var(--color-neutral-neutral-1);
+}
+
+.tab--nav-icon.tab--active .tab__label {
+  color: var(--color-neutral-neutral-1);
 }

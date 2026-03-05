@@ -70,7 +70,7 @@
 
 /* ── Forced states ───────────────────────────────────────────────────────── */
 
-.demo-force-hover .tab {
+.demo-force-hover .tab:not(.tab--nav-icon) {
   background-color: var(--color-interactive-secondary-bg-hover);
 }
 
@@ -84,9 +84,28 @@
   pointer-events: none;
 }
 
+/* Nav-icon forced hover: no container fill, icon box keeps colored bg */
 .demo-force-hover .tab--nav-icon {
-  background-color: var(--color-interactive-secondary-bg-hover);
-  color: var(--color-neutral-neutral-2);
+  background-color: transparent;
+}
+
+.demo-force-hover .tab--nav-icon .tab__nav-body {
+  background-color: transparent;
+}
+
+.demo-force-hover .tab--nav-icon .tab__label {
+  color: var(--color-neutral-neutral-1);
+}
+
+/* Force accent line on hover demo */
+.demo-force-hover .tab--nav-icon::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: var(--color-interactive-secondary-border-hover);
 }
 
 /* ── Interactive demo ────────────────────────────────────────────────────── */
@@ -120,6 +139,15 @@
 
 /* ── Nav-icon states ─────────────────────────────────────────────────────── */
 
+.nav-icon-mode-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-neutral-neutral-3);
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-sm);
+}
+
 .nav-icon-states {
   display: flex;
   gap: var(--spacing-xl);
@@ -137,6 +165,16 @@
   flex: 1;
 }
 
+/* Minimized columns — don't grow, just wrap the icon boxes */
+.nav-icon-states--minimized {
+  gap: var(--spacing-xxxl);
+}
+
+.nav-icon-states__col--minimized {
+  flex: none;
+  align-items: flex-start;
+}
+
 .nav-icon-states__col-label {
   font-size: 0.75rem;
   font-weight: 600;
@@ -149,6 +187,13 @@
   flex-direction: column;
   gap: var(--spacing-xxsm);
   width: 100%;
+}
+
+/* Minimized demo — column of icon-only tabs, no width constraint */
+.nav-icon-demo--minimized {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xxsm);
 }
 
 .nav-icon-interactive-row {

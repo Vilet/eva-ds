@@ -7,6 +7,7 @@
  *
  * Font size is intentionally inherited from the parent so that:
  *   - Inside .btn__icon the wrapper controls the size via --btn-icon-size
+ *   - Inside .tab__icon the wrapper controls the size via --tab-icon-size
  *   - Standalone icons inherit body / component font-size
  */
 .el-icon {
@@ -15,4 +16,13 @@
   line-height: 1;
   display: inline-block;
   vertical-align: middle;
+}
+
+/* Reset the fontello ::before margins so the glyph sits flush inside its
+   flex container without horizontal offset. The fontello defaults (.2em on
+   each side) are intended for inline text but misalign glyphs inside the
+   fixed-size icon wrappers used by Button and Tab. */
+.el-icon::before {
+  margin-left: 0;
+  margin-right: 0;
 }

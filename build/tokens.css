@@ -95,10 +95,59 @@
   --spacing-xxl: 24px; /** Round padding for large-size card items */
   --spacing-xxxl: 32px;
   --spacing-xxxxl: 48px;
+  --font-size-display-large: 57px; /** Display Large — both B and M */
+  --font-size-display-medium: 45px; /** Display Medium — both B and M */
+  --font-size-display-small: 36px; /** Display Small — both B and M */
+  --font-size-headline-large: 32px; /** Headline Large — both B and M */
+  --font-size-headline-medium: 28px; /** Headline Medium — both B and M */
+  --font-size-headline-small-b: 28px; /** Headline Small Bold only (B variant uses 28px; M/R use --font-size-headline-small) */
+  --font-size-headline-small: 24px; /** Headline Small — M and R variants */
+  --font-size-title-large: 22px; /** Title Large — B, M, R */
+  --font-size-title-medium: 16px; /** Title Medium */
+  --font-size-title-small: 14px; /** Title Small */
+  --font-size-label-large: 14px; /** Label Large */
+  --font-size-label-med: 13px; /** Label Medium — used for tab labels, form labels */
+  --font-size-label-small: 12px; /** Label Small */
+  --font-size-label-mini: 11px; /** Label Mini — counts, badges */
+  --font-size-body-large: 16px; /** Body Large */
+  --font-size-body-med: 14px; /** Body Medium */
+  --font-size-body-small: 13px; /** Body Small */
   --font-size-tab-s: 13px; /** Tab label font size — small (same as M) */
   --font-size-tab-m: 13px; /** Tab label font size — medium */
   --font-size-tab-l: 14px; /** Tab label font size — large */
-  --font-weight-semibold: 600; /** Semibold weight — S and M tab labels (always), L tab active state */
+  --line-height-display-large: 64px;
+  --line-height-display-medium: 52px;
+  --line-height-display-small: 44px;
+  --line-height-headline-large: 40px;
+  --line-height-headline-medium: 36px;
+  --line-height-headline-small: 32px;
+  --line-height-title-large: 28px;
+  --line-height-title-medium: 24px;
+  --line-height-title-small: 20px;
+  --line-height-label-large: 20px;
+  --line-height-label-med: 20px;
+  --line-height-label-small: 16px;
+  --line-height-label-mini: 16px;
+  --line-height-body-large: 24px;
+  --line-height-body-med: 20px;
+  --line-height-body-small: 19px;
+  --letter-spacing-display-medium-m: -1.35px; /** Display Medium — Medium weight only (Bold is 0) */
+  --letter-spacing-display-small-m: -1.55px; /** Display Small — Medium weight only (Bold is 0) */
+  --letter-spacing-headline-small-m: -1.25px; /** Headline Small — Medium weight only (Bold and Regular are 0) */
+  --letter-spacing-title-large-m: -1.25px; /** Title Large — Medium weight only (Bold and Regular are 0) */
+  --letter-spacing-title-medium: -0.15px;
+  --letter-spacing-title-small: -0.1px;
+  --letter-spacing-label-large: -0.1px;
+  --letter-spacing-label-med: -0.15px;
+  --letter-spacing-label-small: -0.15px;
+  --letter-spacing-label-mini: -0.15px;
+  --letter-spacing-body-large: -0.25px;
+  --letter-spacing-body-med: -0.1px;
+  --letter-spacing-body-small: -0.2px;
+  --font-weight-bold: 700; /** Bold weight — Display B, Headline B, Title B */
+  --font-weight-semibold: 600; /** Semibold weight */
+  --font-weight-medium: 500; /** Medium weight — Display M, Headline M, Title M, Label, tab labels */
+  --font-weight-regular: 400; /** Regular weight — Headline R, Title R, Label Large, Body */
   --color-interactive-primary-default: var(--primitives-primary-primary-0);
   --color-interactive-primary-hover: var(--primitives-primary-primary-dark-40);
   --color-interactive-primary-disabled: var(--primitives-primary-primary-40);

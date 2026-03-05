@@ -16,6 +16,7 @@ export interface TabProps {
   variant?:        TabVariant;
   isActive?:       boolean;
   isOpen?:         boolean;
+  isMinimized?:    boolean;       // nav-icon only — shows icon box only, no label
   hasChildren?:    boolean;
   onClick?:        () => void;
   onToggle?:       () => void;
@@ -32,6 +33,7 @@ export default function Tab({
   variant = 'default',
   isActive = false,
   isOpen = false,
+  isMinimized = false,
   hasChildren = false,
   onClick,
   onToggle,
@@ -47,14 +49,23 @@ export default function Tab({
           'tab',
           'tab--nav-icon',
           `tab--${size}`,
-          isActive ? 'tab--active' : '',
+          isActive    ? 'tab--active'    : '',
+          isMinimized ? 'tab--minimized' : '',
         ].filter(Boolean).join(' ')}
         onClick={onClick}
         aria-label={ariaLabel ?? label}
         aria-current={isActive ? 'page' : undefined}
       >
-        {icon && <span className="tab__icon" aria-hidden="true">{icon}</span>}
-        {label && <span className="tab__label">{label}</span>}
+        {isMinimized ? (
+          /* Minimized — icon box sits directly in the outer button, no wrapper */
+          icon && <span className="tab__nav-icon-box" aria-hidden="true">{icon}</span>
+        ) : (
+          /* Full-width — inner body wraps icon box + label */
+          <span className="tab__nav-body">
+            {icon && <span className="tab__nav-icon-box" aria-hidden="true">{icon}</span>}
+            <span className="tab__label">{label}</span>
+          </span>
+        )}
       </button>
     );
   }
@@ -93,12 +104,13 @@ export default function Tab({
         )}
         {icon && <span className="tab__icon" aria-hidden="true">{icon}</span>}
         <span className="tab__label">{label}</span>
-        {count !== undefined && (
-          <span className="tab__count" aria-label={`${count} items`}>{count}</span>
-        )}
       </button>
 
-      {/* Actions button — absolutely positioned, shown on hover / active */}
+      {count !== undefined && (
+        <span className="tab__count" aria-label={`${count} items`}>{count}</span>
+      )}
+
+      {/* Actions button — inline sibling, shown on hover / active */}
       {onActionsClick && (
         <span className="tab__actions-wrapper">
           <Button

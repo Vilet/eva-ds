@@ -1,27 +1,98 @@
 {
   "font-size": {
+    "display": {
+      "large":  { "$value": "57", "$type": "dimension", "$description": "Display Large — both B and M" },
+      "medium": { "$value": "45", "$type": "dimension", "$description": "Display Medium — both B and M" },
+      "small":  { "$value": "36", "$type": "dimension", "$description": "Display Small — both B and M" }
+    },
+    "headline": {
+      "large":   { "$value": "32", "$type": "dimension", "$description": "Headline Large — both B and M" },
+      "medium":  { "$value": "28", "$type": "dimension", "$description": "Headline Medium — both B and M" },
+      "small-b": { "$value": "28", "$type": "dimension", "$description": "Headline Small Bold only (B variant uses 28px; M/R use --font-size-headline-small)" },
+      "small":   { "$value": "24", "$type": "dimension", "$description": "Headline Small — M and R variants" }
+    },
+    "title": {
+      "large":  { "$value": "22", "$type": "dimension", "$description": "Title Large — B, M, R" },
+      "medium": { "$value": "16", "$type": "dimension", "$description": "Title Medium" },
+      "small":  { "$value": "14", "$type": "dimension", "$description": "Title Small" }
+    },
+    "label": {
+      "large": { "$value": "14", "$type": "dimension", "$description": "Label Large" },
+      "med":   { "$value": "13", "$type": "dimension", "$description": "Label Medium — used for tab labels, form labels" },
+      "small": { "$value": "12", "$type": "dimension", "$description": "Label Small" },
+      "mini":  { "$value": "11", "$type": "dimension", "$description": "Label Mini — counts, badges" }
+    },
+    "body": {
+      "large": { "$value": "16", "$type": "dimension", "$description": "Body Large" },
+      "med":   { "$value": "14", "$type": "dimension", "$description": "Body Medium" },
+      "small": { "$value": "13", "$type": "dimension", "$description": "Body Small" }
+    },
     "tab": {
-      "s": {
-        "$value": "13",
-        "$type": "dimension",
-        "$description": "Tab label font size — small (same as M)"
-      },
-      "m": {
-        "$value": "13",
-        "$type": "dimension",
-        "$description": "Tab label font size — medium"
-      },
-      "l": {
-        "$value": "14",
-        "$type": "dimension",
-        "$description": "Tab label font size — large"
-      }
+      "s": { "$value": "13", "$type": "dimension", "$description": "Tab label font size — small (same as M)" },
+      "m": { "$value": "13", "$type": "dimension", "$description": "Tab label font size — medium" },
+      "l": { "$value": "14", "$type": "dimension", "$description": "Tab label font size — large" }
     }
   },
-  "font-weight": {
-    "semibold": {
-      "$value": "600",
-      "$description": "Semibold weight — S and M tab labels (always), L tab active state"
+
+  "line-height": {
+    "display": {
+      "large":  { "$value": "64", "$type": "dimension" },
+      "medium": { "$value": "52", "$type": "dimension" },
+      "small":  { "$value": "44", "$type": "dimension" }
+    },
+    "headline": {
+      "large":  { "$value": "40", "$type": "dimension" },
+      "medium": { "$value": "36", "$type": "dimension" },
+      "small":  { "$value": "32", "$type": "dimension" }
+    },
+    "title": {
+      "large":  { "$value": "28", "$type": "dimension" },
+      "medium": { "$value": "24", "$type": "dimension" },
+      "small":  { "$value": "20", "$type": "dimension" }
+    },
+    "label": {
+      "large": { "$value": "20", "$type": "dimension" },
+      "med":   { "$value": "20", "$type": "dimension" },
+      "small": { "$value": "16", "$type": "dimension" },
+      "mini":  { "$value": "16", "$type": "dimension" }
+    },
+    "body": {
+      "large": { "$value": "24", "$type": "dimension" },
+      "med":   { "$value": "20", "$type": "dimension" },
+      "small": { "$value": "19", "$type": "dimension" }
     }
+  },
+
+  "letter-spacing": {
+    "display": {
+      "medium-m": { "$value": "-1.35", "$type": "dimension", "$description": "Display Medium — Medium weight only (Bold is 0)" },
+      "small-m":  { "$value": "-1.55", "$type": "dimension", "$description": "Display Small — Medium weight only (Bold is 0)" }
+    },
+    "headline": {
+      "small-m": { "$value": "-1.25", "$type": "dimension", "$description": "Headline Small — Medium weight only (Bold and Regular are 0)" }
+    },
+    "title": {
+      "large-m": { "$value": "-1.25", "$type": "dimension", "$description": "Title Large — Medium weight only (Bold and Regular are 0)" },
+      "medium":  { "$value": "-0.15", "$type": "dimension" },
+      "small":   { "$value": "-0.1",  "$type": "dimension" }
+    },
+    "label": {
+      "large": { "$value": "-0.1",  "$type": "dimension" },
+      "med":   { "$value": "-0.15", "$type": "dimension" },
+      "small": { "$value": "-0.15", "$type": "dimension" },
+      "mini":  { "$value": "-0.15", "$type": "dimension" }
+    },
+    "body": {
+      "large": { "$value": "-0.25", "$type": "dimension" },
+      "med":   { "$value": "-0.1",  "$type": "dimension" },
+      "small": { "$value": "-0.2",  "$type": "dimension" }
+    }
+  },
+
+  "font-weight": {
+    "bold":     { "$value": "700", "$description": "Bold weight — Display B, Headline B, Title B" },
+    "semibold": { "$value": "600", "$description": "Semibold weight" },
+    "medium":   { "$value": "500", "$description": "Medium weight — Display M, Headline M, Title M, Label, tab labels" },
+    "regular":  { "$value": "400", "$description": "Regular weight — Headline R, Title R, Label Large, Body" }
   }
 }

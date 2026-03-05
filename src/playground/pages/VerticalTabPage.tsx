@@ -337,15 +337,17 @@ export default function VerticalTabPage() {
       <section className="variant-section">
         <h2 className="variant-section__title">Nav-icon</h2>
         <p className="variant-section__desc">
-          Icon-based main navigation tab. Active state shows a right-side accent line.
-          Label is optional (provide <code>ariaLabel</code> when omitted).
+          Icon-based main navigation tab. Two modes: <strong>full-width</strong> (icon box + label)
+          and <strong>minimized</strong> (icon box only, no label — used when the sidebar is collapsed).
+          Active state shows a right-side accent line.
         </p>
 
-        {/* States matrix: forced */}
+        {/* Full-width states matrix */}
+        <p className="nav-icon-mode-label">Full width</p>
         <div className="nav-icon-states">
-          {['Default', 'Hover ↕', 'Active'].map((label, i) => (
-            <div key={label} className="nav-icon-states__col">
-              <span className="nav-icon-states__col-label">{label}</span>
+          {['Default', 'Hover ↕', 'Active'].map((colLabel, i) => (
+            <div key={colLabel} className="nav-icon-states__col">
+              <span className="nav-icon-states__col-label">{colLabel}</span>
               <div className={[
                 'nav-icon-demo',
                 i === 1 ? 'demo-force-hover' : '',
@@ -358,6 +360,33 @@ export default function VerticalTabPage() {
                     label={size.toUpperCase()}
                     icon={<FolderIcon />}
                     isActive={i === 2}
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Minimized states matrix */}
+        <p className="nav-icon-mode-label">Minimized</p>
+        <div className="nav-icon-states nav-icon-states--minimized">
+          {['Default', 'Hover ↕', 'Active'].map((colLabel, i) => (
+            <div key={colLabel} className="nav-icon-states__col nav-icon-states__col--minimized">
+              <span className="nav-icon-states__col-label">{colLabel}</span>
+              <div className={[
+                'nav-icon-demo--minimized',
+                i === 1 ? 'demo-force-hover' : '',
+              ].filter(Boolean).join(' ')}>
+                {(['s', 'm', 'l'] as TabSize[]).map((size) => (
+                  <Tab
+                    key={size}
+                    variant="nav-icon"
+                    size={size}
+                    label={size.toUpperCase()}
+                    icon={<FolderIcon />}
+                    isMinimized
+                    isActive={i === 2}
+                    ariaLabel={`${size.toUpperCase()} nav tab`}
                   />
                 ))}
               </div>
