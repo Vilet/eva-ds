@@ -70,6 +70,35 @@
   --primitives-supportive-palette-gray-primary: #8f8f8f;
   --primitives-supportive-palette-gray-medium: #dfdfdf;
   --primitives-supportive-palette-gray-light: #f5f5f5;
+  --icon-size-tab-s: 14px; /** Icon size for small tabs */
+  --icon-size-tab-m: 16px; /** Icon size for medium tabs */
+  --icon-size-tab-l: 18px; /** Icon size for large tabs */
+  --radius-xxs: 4px; /** Standard radius for buttons, corner radius for highlighted icons with background, tooltips */
+  --radius-xs: 6px; /** Standard radius for buttons, corner radius for highlighted icons with background, tooltips */
+  --radius-s: 8px; /** Large buttons, inputs corner radius, small popovers, small cards, medium size list items */
+  --radius-m: 10px; /** Corner radius for highlighted icons with background, avatars */
+  --radius-l: 12px; /** Corner radius for highlighted icons with background, large cards, large list items, modals */
+  --radius-xl: 16px; /** XL cards */
+  --radius-xxl: 24px;
+  --shadow-elev-1: 0 0 2px rgba(0, 0, 0, 0.16), 0 2px 2px rgba(33, 9, 9, 0.04); /** Highlighted/elevated cards and buttons, card hovers */
+  --shadow-elev-2: 0 2.175px 5.439px rgba(0, 0, 0, 0.10); /** AI agent composer block */
+  --shadow-elev-3: 0 0 1px rgba(16, 17, 30, 0.32), 0 4px 16px rgba(9, 11, 33, 0.08); /** Drawer shadow, small popovers, dropdown menu */
+  --shadow-elev-4: 0 0 1px rgba(16, 17, 30, 0.32), 0 4px 16px rgba(9, 11, 33, 0.16); /** Modal shadow */
+  --shadow-elev-red: 0 0 5px #FF5473; /** Border input, error state */
+  --shadow-elev-blue: 0 0 6px rgba(27, 21, 207, 0.24); /** Border input, active state — themed, uses primary-0 color */
+  --spacing-xxsm: 2px; /** Gap between text blocks */
+  --spacing-xsm: 4px; /** Gap between text blocks, round padding for small list items, side padding for small buttons */
+  --spacing-sm: 8px; /** Gap between text blocks, round padding for small list items, side padding for inputs and buttons */
+  --spacing-m: 12px; /** Round padding for medium list items */
+  --spacing-l: 16px; /** Round padding for medium-size card items */
+  --spacing-xl: 20px;
+  --spacing-xxl: 24px; /** Round padding for large-size card items */
+  --spacing-xxxl: 32px;
+  --spacing-xxxxl: 48px;
+  --font-size-tab-s: 13px; /** Tab label font size — small (same as M) */
+  --font-size-tab-m: 13px; /** Tab label font size — medium */
+  --font-size-tab-l: 14px; /** Tab label font size — large */
+  --font-weight-semibold: 600; /** Semibold weight — S and M tab labels (always), L tab active state */
   --color-interactive-primary-default: var(--primitives-primary-primary-0);
   --color-interactive-primary-hover: var(--primitives-primary-primary-dark-40);
   --color-interactive-primary-disabled: var(--primitives-primary-primary-40);

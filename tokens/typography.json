@@ -1,0 +1,27 @@
+{
+  "font-size": {
+    "tab": {
+      "s": {
+        "$value": "13",
+        "$type": "dimension",
+        "$description": "Tab label font size — small (same as M)"
+      },
+      "m": {
+        "$value": "13",
+        "$type": "dimension",
+        "$description": "Tab label font size — medium"
+      },
+      "l": {
+        "$value": "14",
+        "$type": "dimension",
+        "$description": "Tab label font size — large"
+      }
+    }
+  },
+  "font-weight": {
+    "semibold": {
+      "$value": "600",
+      "$description": "Semibold weight — S and M tab labels (always), L tab active state"
+    }
+  }
+}

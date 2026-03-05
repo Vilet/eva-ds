@@ -1,0 +1,252 @@
+/*
+ * VerticalTab component styles
+ * All color/spacing/radius values reference tokens from build/tokens.css.
+ */
+
+/* ── Component-scoped vars ───────────────────────────────────────────────── */
+.tab {
+  --tab-height:      32px;                        /* M and L */
+  --tab-font-size:   var(--font-size-tab-m);
+  --tab-icon-size:   var(--icon-size-tab-m);
+  --tab-font-weight-bold: var(--font-weight-semibold);
+}
+
+.tab--s {
+  --tab-height:    28px;
+  --tab-font-size: var(--font-size-tab-s);
+  --tab-icon-size: var(--icon-size-tab-s);
+}
+
+.tab--l {
+  --tab-font-size: var(--font-size-tab-l);
+  --tab-icon-size: var(--icon-size-tab-l);
+}
+
+/* ── Root container (default variant) ───────────────────────────────────── */
+.tab {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  height: var(--tab-height);
+  border-radius: var(--radius-xs);
+  position: relative;
+  cursor: default;
+  user-select: none;
+  transition: background-color 0.1s;
+}
+
+.tab--s { border-radius: var(--radius-xxs); }
+
+.tab:hover {
+  background-color: var(--color-interactive-secondary-bg-hover);
+}
+
+.tab--active {
+  background-color: var(--color-surface-tab-active);
+}
+
+/* ── Level indentation ───────────────────────────────────────────────────── */
+.tab--level-2 {
+  padding-left: var(--spacing-xl);
+}
+
+/* ── Main row button ─────────────────────────────────────────────────────── */
+.tab__row-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xsm);
+  padding: 0 var(--spacing-sm);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: var(--tab-font-size);
+  font-weight: var(--tab-font-weight-bold); /* semibold for all sizes */
+  color: var(--color-neutral-neutral-2);
+  min-width: 0; /* allow text truncation */
+  border-radius: var(--radius-xxs);
+  transition: color 0.1s;
+}
+
+.tab:hover .tab__row-btn {
+  color: var(--color-neutral-neutral-2);
+}
+
+.tab--active .tab__row-btn {
+  color: var(--color-neutral-neutral-1);
+}
+
+.tab__row-btn:focus-visible {
+  box-shadow: var(--shadow-elev-blue);
+  outline: none;
+}
+
+/* ── Chevron (inline, inside row button) ─────────────────────────────────── */
+/*
+ * 20×20px bounding box (Figma spec). Icon glyph is smaller within.
+ * font-size drives the actual glyph size; box stays fixed at 20px.
+ */
+.tab__chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  font-size: var(--tab-icon-size);
+  line-height: 0;
+  color: var(--color-neutral-neutral-4);
+  transition: color 0.1s;
+}
+
+.tab:hover .tab__chevron {
+  color: var(--color-neutral-neutral-2);
+}
+
+.tab--active .tab__chevron {
+  color: var(--color-neutral-neutral-1);
+}
+
+/* ── Icon ────────────────────────────────────────────────────────────────── */
+/*
+ * 18×18px bounding box (Figma spec). Icon glyph is smaller within.
+ * font-size drives the actual glyph size; box stays fixed at 18px.
+ */
+.tab__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 0;
+  width: 18px;
+  height: 18px;
+  font-size: var(--tab-icon-size);
+  color: var(--color-neutral-neutral-3);
+  transition: color 0.1s;
+}
+
+.tab:hover .tab__icon {
+  color: var(--color-neutral-neutral-2);
+}
+
+.tab--active .tab__icon {
+  color: var(--color-neutral-neutral-1);
+}
+
+/* ── Label ───────────────────────────────────────────────────────────────── */
+.tab__label {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Count badge ─────────────────────────────────────────────────────────── */
+.tab__count {
+  flex-shrink: 0;
+  font-size: var(--tab-font-size);
+  color: var(--color-neutral-neutral-3);
+  padding-left: var(--spacing-xsm);
+}
+
+/* Hide count when actions button is visible (hover / active) */
+.tab:hover .tab__count,
+.tab--active .tab__count {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Actions wrapper (···) ───────────────────────────────────────────────── */
+.tab__actions-wrapper {
+  position: absolute;
+  right: var(--spacing-xxsm);
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.1s;
+}
+
+.tab:hover .tab__actions-wrapper,
+.tab--active .tab__actions-wrapper {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Nav-icon variant ────────────────────────────────────────────────────── */
+.tab--nav-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xxsm);
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: auto;
+  border-radius: var(--radius-xs);
+  color: var(--color-neutral-neutral-3);
+  font-family: inherit;
+  font-size: var(--tab-font-size);
+  position: relative;
+  transition: background-color 0.1s, color 0.1s;
+  width: 100%;
+}
+
+/* Padding per size (nav-icon) */
+.tab--nav-icon.tab--s { padding: var(--spacing-xsm);  }
+.tab--nav-icon.tab--m { padding: var(--spacing-sm);   }
+.tab--nav-icon.tab--l { padding: var(--spacing-sm) var(--spacing-m); }
+
+.tab--nav-icon:hover {
+  background-color: var(--color-interactive-secondary-bg-hover);
+  color: var(--color-neutral-neutral-2);
+}
+
+.tab--nav-icon.tab--active {
+  background-color: var(--color-surface-tab-active);
+  color: var(--color-neutral-neutral-1);
+}
+
+/* Right-side accent line for active nav-icon */
+.tab--nav-icon.tab--active::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px; /* TODO: replace with border token when available */
+  height: 60%;
+  background-color: var(--color-interactive-primary-default);
+  border-radius: var(--radius-xxl);
+}
+
+.tab--nav-icon:focus-visible {
+  box-shadow: var(--shadow-elev-blue);
+  outline: none;
+}
+
+/* Nav-icon icon is larger */
+.tab--nav-icon .tab__icon {
+  color: inherit;
+  transition: none;
+}
+
+/* TODO: replace with --icon-size-nav-s / -m / -l tokens when added */
+.tab--nav-icon.tab--s .tab__icon { --tab-icon-size: 18px; }
+.tab--nav-icon.tab--m .tab__icon { --tab-icon-size: 22px; }
+.tab--nav-icon.tab--l .tab__icon { --tab-icon-size: 26px; }
+
+/* Nav-icon label — small text below icon */
+.tab--nav-icon .tab__label {
+  font-size: var(--tab-font-size);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+  flex: unset;
+}

@@ -1,42 +1,83 @@
+/* Playground shell layout */
+:root {
+  --playground-sidebar-width: 260px;
+  --playground-topbar-height: 52px;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.playground-shell {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  position: relative;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ── Content area ── */
+.playground-content {
+  flex: 1;
+  min-width: 0;
+  padding: var(--spacing-xxxl);
+  background-color: var(--color-neutral-neutral-7);
+  overflow-y: auto;
+  height: 100vh;
+}
+
+/* ── Mobile hamburger button ── */
+.playground-menu-btn {
+  display: none;
+  position: fixed;
+  top: var(--spacing-l);
+  left: var(--spacing-l);
+  z-index: 200;
+  flex-direction: column;
+  gap: var(--spacing-xsm);
+  width: 40px;
+  height: 40px;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-interactive-secondary-border-default);
+  border-radius: var(--radius-s);
+  background-color: var(--color-surface-card-bg);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-elev-1);
+}
+
+.playground-menu-btn__bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: var(--color-neutral-neutral-1);
+  border-radius: var(--radius-xxs);
+  transition: background-color 0.15s;
+}
+
+/* ── Mobile overlay ── */
+.playground-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 99;
+}
+
+/* ── Responsive: collapse sidebar ── */
+@media (max-width: 768px) {
+  .playground-menu-btn {
+    display: flex;
   }
-  to {
-    transform: rotate(360deg);
+
+  .playground-content {
+    padding: var(--spacing-xxl) var(--spacing-l);
+    padding-top: calc(var(--playground-topbar-height) + var(--spacing-l));
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .playground-overlay {
+    display: block;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

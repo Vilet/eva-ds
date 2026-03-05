@@ -1,0 +1,21 @@
+{
+  "icon-size": {
+    "tab": {
+      "s": {
+        "$value": "14",
+        "$type": "dimension",
+        "$description": "Icon size for small tabs"
+      },
+      "m": {
+        "$value": "16",
+        "$type": "dimension",
+        "$description": "Icon size for medium tabs"
+      },
+      "l": {
+        "$value": "18",
+        "$type": "dimension",
+        "$description": "Icon size for large tabs"
+      }
+    }
+  }
+}

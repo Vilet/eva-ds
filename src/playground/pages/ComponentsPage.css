@@ -1,0 +1,43 @@
+.components-page {
+  max-width: 720px;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-neutral-neutral-1);
+  margin-bottom: var(--spacing-sm);
+}
+
+.page-subtitle {
+  font-size: 0.9375rem;
+  color: var(--color-neutral-neutral-3);
+  margin-bottom: var(--spacing-xxxl);
+}
+
+.components-empty {
+  padding: var(--spacing-xxxxl) var(--spacing-xxxl);
+  border: 1px dashed var(--color-neutral-neutral-5);
+  border-radius: var(--radius-l);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.components-empty__message {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-neutral-neutral-3);
+}
+
+.components-empty__hint {
+  font-size: 0.875rem;
+  color: var(--color-neutral-neutral-4);
+}
+
+.components-empty__hint code {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.8125rem;
+  color: var(--color-interactive-primary-default);
+}

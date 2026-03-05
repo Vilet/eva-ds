@@ -1,0 +1,18 @@
+/*
+ * Icon component styles
+ *
+ * The icon font glyph is rendered via ::before (from fontello.css).
+ * .el-icon resets the margins that fontello adds by default so icons
+ * compose cleanly inside buttons, badges, and other tight containers.
+ *
+ * Font size is intentionally inherited from the parent so that:
+ *   - Inside .btn__icon the wrapper controls the size via --btn-icon-size
+ *   - Standalone icons inherit body / component font-size
+ */
+.el-icon {
+  margin-left: 0;
+  margin-right: 0;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+}
