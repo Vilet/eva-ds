@@ -1,0 +1,101 @@
+.list-record-page {
+  max-width: 1100px;
+}
+
+.list-record-page .page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-neutral-neutral-1);
+  margin-bottom: var(--spacing-sm);
+}
+
+.list-record-page .page-subtitle {
+  font-size: 0.9375rem;
+  color: var(--color-neutral-neutral-3);
+  margin-bottom: var(--spacing-xxxl);
+}
+
+.list-record-page .variant-section {
+  margin-bottom: var(--spacing-xxl);
+}
+
+.list-record-page .variant-section__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-neutral-neutral-1);
+  margin-bottom: var(--spacing-sm);
+}
+
+.list-record-demo-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xxsm);
+}
+
+/* -- Demo icon containers (consumer-side styling) -------------------------- */
+.demo-icon-32 {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-l);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.demo-icon-32--primary {
+  background-color: var(--primitives-primary-primary-dark-40-8);
+  color: var(--color-interactive-primary-default);
+}
+
+.demo-icon-32--secondary {
+  background-color: var(--primitives-supportive-palette-brown-medium);
+}
+
+.demo-icon-32 .el-icon {
+  font-size: 16px;
+}
+
+/* -- Demo metadata helpers ------------------------------------------------- */
+.demo-meta-text {
+  font-size: var(--font-size-label-small);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-label-small);
+  letter-spacing: var(--letter-spacing-label-small);
+  color: var(--color-neutral-neutral-3);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.demo-meta-text--dark {
+  color: var(--color-neutral-neutral-1);
+}
+
+.demo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xsm);
+  height: 20px;
+  padding: 1px var(--spacing-sm);
+  border-radius: 42px;
+  font-size: var(--font-size-label-mini);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-label-mini);
+  letter-spacing: var(--letter-spacing-label-mini);
+  color: var(--color-neutral-neutral-1);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.demo-badge--filled {
+  background-color: var(--color-interactive-secondary-bg-hover);
+}
+
+.demo-badge--outlined {
+  border: 1px solid var(--color-surface-sidepanel-border);
+}
+
+.demo-badge .el-icon {
+  font-size: 14px;
+}

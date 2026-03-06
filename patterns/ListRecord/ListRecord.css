@@ -1,0 +1,96 @@
+/*
+ * ListRecord component styles
+ * All color/spacing/radius values reference tokens from build/tokens.css.
+ */
+
+/* -- Component-scoped vars ------------------------------------------------- */
+.list-record {
+  --list-record-height: 48px;
+  --list-record-fade-width: 32px;
+}
+
+/* -- Container ------------------------------------------------------------- */
+.list-record {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--list-record-height);
+  padding: 0 var(--spacing-sm);
+  gap: var(--spacing-l);
+  border-radius: var(--radius-l);
+  background-color: var(--color-neutral-neutral-8-white);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.list-record:hover {
+  background-color: var(--color-interactive-secondary-bg-hover);
+}
+
+.list-record--selected {
+  border-color: var(--color-interactive-primary-border-active);
+}
+
+/* -- Leading icon slot ----------------------------------------------------- */
+.list-record__icon-slot {
+  flex-shrink: 0;
+}
+
+/* -- Content area ---------------------------------------------------------- */
+.list-record__content {
+  flex: 1 0 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-m);
+  min-width: 0;
+}
+
+/* -- Title ----------------------------------------------------------------- */
+.list-record__title {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black calc(100% - var(--list-record-fade-width)),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    black calc(100% - var(--list-record-fade-width)),
+    transparent
+  );
+}
+
+.list-record__title-text {
+  font-size: var(--font-size-title-small);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-title-small);
+  letter-spacing: var(--letter-spacing-title-small);
+  color: var(--color-neutral-neutral-1);
+  white-space: nowrap;
+}
+
+/* -- Floating actions ------------------------------------------------------ */
+.list-record__actions {
+  position: absolute;
+  right: var(--spacing-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xxsm);
+  padding: var(--spacing-xxsm);
+  background-color: var(--color-neutral-neutral-8-white);
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-elev-1);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.list-record:hover .list-record__actions {
+  opacity: 1;
+  pointer-events: auto;
+}

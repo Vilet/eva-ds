@@ -1,0 +1,33 @@
+.main-sidebar-page {
+  max-width: 1200px;
+}
+
+.sidebar-demo-row {
+  display: flex;
+  gap: var(--spacing-xxl);
+  padding: var(--spacing-xxl);
+  background-color: var(--color-neutral-neutral-7);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+}
+
+.sidebar-demo-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.sidebar-demo-col__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-neutral-neutral-3);
+  text-transform: uppercase;
+}
+
+/* Fixed height for sidebar demos so they look like real sidebars */
+.sidebar-demo-col .main-sidebar {
+  height: 700px;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+}

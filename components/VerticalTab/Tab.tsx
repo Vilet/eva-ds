@@ -17,6 +17,7 @@ export interface TabProps {
   isActive?:       boolean;
   isOpen?:         boolean;
   isMinimized?:    boolean;       // nav-icon only — shows icon box only, no label
+  hasIconBoxBg?:   boolean;       // nav-icon only — false removes colored fill from icon box (regular section tabs)
   hasChildren?:    boolean;
   onClick?:        () => void;
   onToggle?:       () => void;
@@ -34,6 +35,7 @@ export default function Tab({
   isActive = false,
   isOpen = false,
   isMinimized = false,
+  hasIconBoxBg = true,
   hasChildren = false,
   onClick,
   onToggle,
@@ -49,8 +51,9 @@ export default function Tab({
           'tab',
           'tab--nav-icon',
           `tab--${size}`,
-          isActive    ? 'tab--active'    : '',
-          isMinimized ? 'tab--minimized' : '',
+          isActive      ? 'tab--active'      : '',
+          isMinimized   ? 'tab--minimized'   : '',
+          !hasIconBoxBg ? 'tab--no-icon-bg'  : '',
         ].filter(Boolean).join(' ')}
         onClick={onClick}
         aria-label={ariaLabel ?? label}

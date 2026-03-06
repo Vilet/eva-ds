@@ -1,0 +1,135 @@
+/*
+ * MainAppbar component styles
+ * All color/spacing/radius values reference tokens from build/tokens.css.
+ */
+
+/* ── Component-scoped vars ───────────────────────────────────────────────── */
+.main-appbar {
+  --appbar-height: 56px;
+  --appbar-avatar-size: 20px;
+
+  --appbar-indicator-size: 16px;
+}
+
+/* ── Container ───────────────────────────────────────────────────────────── */
+.main-appbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--appbar-height);
+  padding: var(--spacing-sm) var(--spacing-xxxl);
+  background-color: var(--color-neutral-neutral-8-white);
+  width: 100%;
+}
+
+/* ── Breadcrumbs ─────────────────────────────────────────────────────────── */
+.main-appbar__breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xsm);
+  flex-shrink: 0;
+}
+
+/* Override Button ghost color for breadcrumb context */
+.main-appbar__breadcrumbs .btn {
+  color: var(--color-neutral-neutral-4);
+}
+
+.main-appbar__separator {
+  font-size: var(--font-size-label-small);
+  line-height: var(--line-height-label-small);
+  color: var(--color-neutral-neutral-4);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* ── Right controls area ─────────────────────────────────────────────────── */
+.main-appbar__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xsm);
+  flex: 1 0 0;
+  min-width: 0;
+  justify-content: flex-end;
+}
+
+/* ── AppbarAction (Button wrapper + indicator) ───────────────────────────── */
+.appbar-action {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.appbar-action__indicator {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: var(--appbar-indicator-size);
+  height: var(--appbar-indicator-size);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  color: var(--color-neutral-neutral-1);
+  font-size: var(--appbar-indicator-size);
+  line-height: 0;
+}
+
+/* ── AppbarAvatarGroup ───────────────────────────────────────────────────── */
+.appbar-avatar-group {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  height: var(--appbar-avatar-size);
+  padding-left: var(--spacing-xxsm);
+  padding-right: var(--spacing-sm);
+  border-radius: var(--radius-xxl);
+  flex-shrink: 0;
+  /* Reset button styles — visually NOT a button, no hover */
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: opacity 0.2s ease;
+}
+
+.appbar-avatar-group:hover {
+  opacity: 0.5;
+}
+
+.appbar-avatar-group__avatars {
+  display: flex;
+  align-items: flex-start;
+}
+
+.appbar-avatar-group__avatar {
+  display: block;
+  width: var(--appbar-avatar-size);
+  height: var(--appbar-avatar-size);
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.appbar-avatar-group__avatar + .appbar-avatar-group__avatar {
+  margin-left: calc(-1 * var(--spacing-xsm));
+}
+
+.appbar-avatar-group__count {
+  font-size: var(--font-size-label-small);
+  line-height: var(--line-height-label-small);
+  letter-spacing: var(--letter-spacing-body-small);
+  color: var(--color-neutral-neutral-1);
+  white-space: nowrap;
+}
+
+/* ── Profile avatar (circular image inside Button icon slot) ─────────────── */
+.appbar-profile-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}

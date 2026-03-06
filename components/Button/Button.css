@@ -45,39 +45,44 @@
 }
 
 /* ── Sizes ────────────────────────────────────────────────────────────────── */
+/* Heights are fixed per Figma — no vertical padding. */
 .btn--m {
-  padding: var(--spacing-sm) var(--spacing-m);
+  height: 40px;
+  padding: 0 var(--spacing-m);
   border-radius: var(--radius-s);
   font-size: var(--btn-font-size-m);
   gap: var(--spacing-xsm);
 }
 
 .btn--s {
-  padding: var(--spacing-xsm) var(--spacing-sm);
+  height: 32px;
+  padding: 0 var(--spacing-sm);
   border-radius: var(--radius-xs);
   font-size: var(--btn-font-size-s);
   gap: var(--spacing-xsm);
 }
 
 .btn--xs {
-  padding: var(--spacing-xxsm) var(--spacing-xsm);
+  height: 28px;
+  padding: 0 var(--spacing-xsm);
   border-radius: var(--radius-xxs);
   font-size: var(--btn-font-size-xs);
   gap: var(--spacing-xxsm);
 }
 
 .btn--xxs {
-  padding: var(--spacing-xxsm);
+  height: 24px;
+  padding: 0 var(--spacing-xsm);
   border-radius: var(--radius-xxs);
   font-size: var(--btn-font-size-xs);
   gap: var(--spacing-xxsm);
 }
 
-/* Icon-only: equal padding on all sides */
-.btn--icon-only.btn--m  { padding: var(--spacing-sm); }
-.btn--icon-only.btn--s  { padding: var(--spacing-xsm); }
-.btn--icon-only.btn--xs { padding: var(--spacing-xxsm); }
-.btn--icon-only.btn--xxs { padding: var(--spacing-xxsm); }
+/* Icon-only: no horizontal padding — height alone sizes the button */
+.btn--icon-only.btn--m  { width: 40px; padding: 0; }
+.btn--icon-only.btn--s  { width: 32px; padding: 0; }
+.btn--icon-only.btn--xs { width: 28px; padding: 0; }
+.btn--icon-only.btn--xxs { width: 24px; padding: 0; }
 
 /* ── Primary ──────────────────────────────────────────────────────────────── */
 .btn--primary {
@@ -126,14 +131,16 @@
 }
 
 /* ── Ghost ────────────────────────────────────────────────────────────────── */
+/* All sizes default: neutral-3; hover all: neutral-2 */
 .btn--ghost {
   background-color: transparent;
   border-color: transparent;
-  color: var(--color-neutral-neutral-1);
+  color: var(--color-neutral-neutral-3);
 }
 
 .btn--ghost:hover:not(:disabled) {
   background-color: var(--color-interactive-secondary-bg-hover);
+  color: var(--color-neutral-neutral-2);
 }
 
 .btn--ghost:active:not(:disabled) {
@@ -149,7 +156,7 @@
 .btn--solo-floating {
   background-color: var(--color-surface-card-bg);
   border-color: transparent;
-  color: var(--color-neutral-neutral-2);
+  color: var(--color-neutral-neutral-3);
   box-shadow: var(--shadow-elev-1);
 }
 

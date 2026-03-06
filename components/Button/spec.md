@@ -68,7 +68,10 @@ export interface ButtonProps {
 | secondary border | `--color-interactive-secondary-border-default` |
 | secondary border hover | `--color-interactive-secondary-border-hover` |
 | secondary border active | `--color-interactive-secondary-border-active` |
-| secondary/ghost text | `--color-neutral-neutral-1` |
+| secondary text | `--color-neutral-neutral-1` |
+| ghost text default (all sizes) | `--color-neutral-neutral-3` |
+| ghost text hover (all sizes) | `--color-neutral-neutral-2` |
+| solo-floating text default | `--color-neutral-neutral-3` |
 | disabled text | `--color-neutral-neutral-4` |
 | disabled border | `--color-neutral-neutral-5` |
 | solo-floating bg | `--color-surface-card-bg` |
@@ -78,10 +81,14 @@ export interface ButtonProps {
 | border-radius (M) | `--radius-s` |
 | border-radius (S) | `--radius-xs` |
 | border-radius (XS, XXS) | `--radius-xxs` |
-| padding-y M / padding-x M | `--spacing-sm` / `--spacing-m` |
-| padding-y S / padding-x S | `--spacing-xsm` / `--spacing-sm` |
-| padding-y XS / padding-x XS | `--spacing-xxsm` / `--spacing-xsm` |
-| padding XXS | `--spacing-xxsm` (all sides) |
+| height M | 40px (fixed) |
+| height S | 32px (fixed) |
+| height XS | 28px (fixed) |
+| height XXS | 24px (fixed) |
+| padding-x M | `--spacing-m` |
+| padding-x S | `--spacing-sm` |
+| padding-x XS | `--spacing-xsm` |
+| padding-x XXS | `--spacing-xsm` |
 | icon/label gap | `--spacing-xsm` |
 
 ---

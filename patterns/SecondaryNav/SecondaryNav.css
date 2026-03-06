@@ -1,0 +1,102 @@
+/*
+ * SecondaryNav pattern styles
+ * All color/spacing/radius values reference tokens from build/tokens.css.
+ *
+ * The secondary nav panel sits to the right of the main sidebar.
+ * General structure is unified; tab sections change per module context.
+ */
+
+/* -- Container ------------------------------------------------------------ */
+
+.secondary-nav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 240px;
+  background-color: var(--color-surface-sidepanel-bg);
+  border-right: 1px solid var(--color-surface-sidepanel-border);
+  overflow: hidden;
+}
+
+/* -- Header (icon + module title) ----------------------------------------- */
+/* Same fixed height as the main nav header (56px) for visual alignment */
+
+.secondary-nav__header {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: var(--spacing-sm) var(--spacing-m);
+  border-bottom: 1px solid var(--color-surface-sidepanel-border);
+  flex-shrink: 0;
+  gap: var(--spacing-m);
+}
+
+.secondary-nav__header-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-xs);
+  background-color: var(--color-interactive-secondary-bg-active);
+  overflow: hidden;
+  font-size: var(--icon-size-tab-m);
+  color: var(--color-neutral-neutral-1);
+}
+
+.secondary-nav__header-label {
+  flex: 1 0 0;
+  min-width: 0;
+  font-size: var(--font-size-title-small);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-title-small);
+  letter-spacing: var(--letter-spacing-title-small);
+  color: var(--color-neutral-neutral-1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* -- Scrollable body ------------------------------------------------------ */
+
+.secondary-nav__body {
+  flex: 1 0 0;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* -- Section -------------------------------------------------------------- */
+
+/* Section: pt-8 pr-8 pb-16 pl-12 + bottom border (Figma spec) */
+.secondary-nav__section {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-l) var(--spacing-m);
+  border-bottom: 1px solid var(--color-surface-sidepanel-border);
+}
+
+.secondary-nav__section:last-child {
+  border-bottom: none;
+}
+
+/* Section subtitle: 4px side paddings, 8px top and bottom */
+.secondary-nav__section-title {
+  margin: 0;
+  padding: var(--spacing-sm) var(--spacing-xsm);
+  font-size: var(--font-size-label-small);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-label-small);
+  letter-spacing: var(--letter-spacing-label-small);
+  color: var(--color-neutral-neutral-3);
+}
+
+/* Tab items container: 4px gap between tabs.
+   No horizontal padding — section provides pl-12 pr-8; Tab.css handles its own px-8. */
+.secondary-nav__section-items {
+  display: flex;
+  flex-direction: column;
+}

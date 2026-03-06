@@ -38,7 +38,7 @@
 }
 
 .tab:hover {
-  background-color: var(--color-interactive-secondary-bg-active);
+  background-color: var(--color-interactive-secondary-bg-hover);
 }
 
 .tab--active {
@@ -47,7 +47,8 @@
 
 /* ── Level indentation ───────────────────────────────────────────────────── */
 .tab--level-2 {
-  padding-left: var(--spacing-xl);
+  /* Align with level-1 content: tab padding (8) + chevron box (20) + row-btn gap (4) = 32px */
+  padding-left: calc(var(--spacing-sm) + 20px + var(--spacing-xsm));
 }
 
 /* ── Main row button ─────────────────────────────────────────────────────── */
@@ -55,7 +56,7 @@
   flex: 1;
   display: flex;
   align-items: center;
-  gap: var(--spacing-xsm);
+  gap: var(--spacing-m);
   padding: 0;
   background: none;
   border: none;
@@ -123,7 +124,7 @@
   line-height: 0;
   width: 18px;
   height: 18px;
-  font-size: var(--tab-icon-size);
+  font-size: var(--icon-size-tab-l);
   color: var(--color-neutral-neutral-2);
   transition: color 0.1s;
 }
@@ -145,16 +146,13 @@
 }
 
 /* ── Count badge ─────────────────────────────────────────────────────────── */
-/*
- * TODO: flag missing tokens —
- *   --font-size-count: 11px  (Figma Label/Mini 11-16 — all sizes use 11px)
- *   --color-text-count       (Figma uses secondary-1 #b2957a, needs semantic alias)
- */
 .tab__count {
   flex-shrink: 0;
   align-self: center;
-  font-size: var(--tab-font-size);
-  color: var(--color-neutral-neutral-3);
+  font-size: var(--font-size-label-mini);
+  line-height: var(--line-height-label-mini);
+  letter-spacing: var(--letter-spacing-label-mini);
+  color: var(--primitives-secondary-secondary-dark-40);
 }
 
 /* ── Actions wrapper (···) ───────────────────────────────────────────────── */
@@ -251,15 +249,14 @@
 /* Hover: no container fill — only accent line shows */
 
 .tab--nav-icon.tab--active .tab__nav-body {
-  background-color: var(--color-interactive-secondary-bg-active);
+  background-color: var(--color-surface-tab-active);
 }
 
 /* ── Nav-icon branded icon box ───────────────────────────────────────────── */
 /*
  * 28×28px container with secondary-highlighted bg and radius-m rounding.
- * Icon glyph viewbox is 14×14px (top-1/4 to bottom-1/4 of the 28px box).
+ * 28×28px container with secondary-highlighted bg and radius-m rounding.
  * TODO: replace 28px with --icon-box-nav-size token when added.
- * TODO: replace --icon-size-tab-s with --icon-size-nav-icon token when added.
  */
 .tab__nav-icon-box {
   display: inline-flex;
@@ -271,14 +268,30 @@
   border-radius: var(--radius-m);
   background-color: var(--color-interactive-secondary-bg-highlighted);
   overflow: hidden;
-  font-size: var(--icon-size-tab-s); /* 14px — matches 14×14 icon viewbox */
+  font-size: var(--icon-size-tab-m); /* 16px */
   color: var(--color-neutral-neutral-1);
   transition: background-color 0.1s;
 }
 
-/* Active only: icon box loses colored fill */
-.tab--nav-icon.tab--active .tab__nav-icon-box {
+/* Active: icon box gets tab-active fill (minimized mode only) */
+.tab--nav-icon.tab--active.tab--minimized .tab__nav-icon-box {
+  background-color: var(--color-surface-tab-active);
+}
+
+/* Active extended: icon box loses its fill — nav-body handles the active bg */
+.tab--nav-icon.tab--active:not(.tab--minimized) .tab__nav-icon-box {
   background-color: transparent;
+}
+
+/* No icon box background (regular section tabs) — default state only */
+.tab--nav-icon.tab--no-icon-bg .tab__nav-icon-box {
+  background-color: transparent;
+  font-size: var(--icon-size-tab-l); /* 18px — larger icon when no box fill */
+}
+
+/* Active overrides no-icon-bg — icon box gets tab-active fill even for regular tabs (minimized only) */
+.tab--nav-icon.tab--active.tab--minimized.tab--no-icon-bg .tab__nav-icon-box {
+  background-color: var(--color-surface-tab-active);
 }
 
 /* ── Nav-icon label ──────────────────────────────────────────────────────── */

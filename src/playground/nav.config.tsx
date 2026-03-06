@@ -7,6 +7,10 @@ import RadiusPage from './pages/RadiusPage';
 import ShadowsPage from './pages/ShadowsPage';
 import ButtonPage from './pages/ButtonPage';
 import VerticalTabPage from './pages/VerticalTabPage';
+import MainSidebarPage from './pages/MainSidebarPage';
+import SecondaryNavPage from './pages/SecondaryNavPage';
+import MainAppbarPage from './pages/MainAppbarPage';
+import ListRecordPage from './pages/ListRecordPage';
 
 export interface NavItem {
   id: string;
@@ -35,6 +39,16 @@ export const NAV_CONFIG: NavItem[] = [
       { id: 'vertical-tab', label: 'Vertical Tab', path: '/components/vertical-tab' },
     ],
   },
+  {
+    id: 'patterns',
+    label: 'Patterns',
+    children: [
+      { id: 'main-sidebar',   label: 'Main Sidebar',   path: '/patterns/main-sidebar' },
+      { id: 'secondary-nav',  label: 'Secondary Nav',  path: '/patterns/secondary-nav' },
+      { id: 'main-appbar',    label: 'Main Appbar',    path: '/patterns/main-appbar' },
+      { id: 'list-record',    label: 'List Record',    path: '/patterns/list-record' },
+    ],
+  },
 ];
 
 export interface RouteConfig {
@@ -55,6 +69,10 @@ function collectRoutes(items: NavItem[]): RouteConfig[] {
         case 'shadows':   element = <ShadowsPage />;  break;
         case 'button':       element = <ButtonPage />;      break;
         case 'vertical-tab': element = <VerticalTabPage />; break;
+        case 'main-sidebar':   element = <MainSidebarPage />;  break;
+        case 'secondary-nav':  element = <SecondaryNavPage />; break;
+        case 'main-appbar':    element = <MainAppbarPage />;  break;
+        case 'list-record':    element = <ListRecordPage />;  break;
         default: element = <Navigate to="/" replace />;
       }
       routes.push({ path: item.path, element });

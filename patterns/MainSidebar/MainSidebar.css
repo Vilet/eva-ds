@@ -1,0 +1,270 @@
+/*
+ * MainSidebar pattern styles
+ * All color/spacing/radius values reference tokens from build/tokens.css.
+ *
+ * Three states: skeleton, minimized (72px), open (200px).
+ */
+
+/* ── Container ──────────────────────────────────────────────────────────── */
+
+.main-sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--color-surface-sidepanel-bg);
+  border-right: 1px solid var(--color-surface-sidepanel-border);
+  overflow: hidden;
+  transition: width 0.2s;
+}
+
+.main-sidebar--minimized,
+.main-sidebar--skeleton {
+  width: 72px;
+}
+
+.main-sidebar--open {
+  width: 200px;
+}
+
+/* ── Header (branch switcher) ───────────────────────────────────────────── */
+
+.main-sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 0 var(--spacing-m);
+  border-bottom: 1px solid var(--color-surface-sidepanel-border);
+  flex-shrink: 0;
+  gap: var(--spacing-xsm);
+}
+
+/* Branch button (avatar + name + expand chevron) */
+.main-sidebar__branch-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  height: 28px;
+  padding: 0 var(--spacing-xsm);
+  border-radius: var(--radius-xs);
+  background: none;
+  border: none;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.main-sidebar--open .main-sidebar__branch-btn {
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.main-sidebar__avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-xs);
+  background-color: var(--color-interactive-secondary-bg-active);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* TODO: replace 10px with token when available */
+  font-size: 10px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-neutral-1);
+  line-height: 1;
+}
+
+.main-sidebar__branch-name {
+  flex: 1 0 0;
+  min-width: 0;
+  /* Body/Mini 12-17 — TODO: add --font-size-body-mini token */
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+  color: var(--color-neutral-neutral-1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.main-sidebar__branch-expand {
+  flex-shrink: 0;
+  display: inline-flex;
+  font-size: 14px;
+  color: var(--color-neutral-neutral-2);
+}
+
+/* Collapse / expand toggle button */
+.main-sidebar__toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: var(--radius-xs);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-neutral-neutral-2);
+  font-size: 14px;
+}
+
+.main-sidebar__toggle-btn:hover {
+  background-color: var(--color-interactive-secondary-bg-hover);
+}
+
+/* ── Tabs area (scrollable nav) ─────────────────────────────────────────── */
+
+.main-sidebar__tabs {
+  flex: 1 0 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--spacing-l);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.main-sidebar--minimized .main-sidebar__tabs {
+  padding: var(--spacing-l) 0 0 0;
+}
+
+/* Force minimized tabs to fill sidebar width */
+.main-sidebar--minimized .tab--nav-icon {
+  width: 100%;
+}
+
+.main-sidebar--open .main-sidebar__tabs {
+  padding-left: var(--spacing-sm);
+  padding-right: 1px;
+}
+
+/* ── Expand trigger (minimized only — chevrons-right) ───────────────────── */
+
+.main-sidebar__expand-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: var(--radius-xs);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-neutral-neutral-2);
+  font-size: 14px;
+  margin: 0 auto;
+}
+
+.main-sidebar__expand-trigger:hover {
+  background-color: var(--color-interactive-secondary-bg-hover);
+}
+
+/* ── Nav group ──────────────────────────────────────────────────────────── */
+
+.main-sidebar__group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+/* ── Divider ────────────────────────────────────────────────────────────── */
+
+.main-sidebar__divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.main-sidebar--minimized .main-sidebar__divider,
+.main-sidebar--skeleton .main-sidebar__divider {
+  padding: var(--spacing-sm) var(--spacing-l);
+}
+
+.main-sidebar--open .main-sidebar__divider {
+  padding: var(--spacing-sm);
+}
+
+.main-sidebar__divider-line {
+  flex: 1 0 0;
+  height: 1px;
+  min-height: 1px;
+  background-color: var(--color-surface-sidepanel-border);
+}
+
+/* ── Footer (company logo) ──────────────────────────────────────────────── */
+
+.main-sidebar__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  padding: var(--spacing-sm) var(--spacing-m) var(--spacing-xxl);
+}
+
+.main-sidebar--minimized .main-sidebar__footer {
+  align-items: center;
+}
+
+.main-sidebar--open .main-sidebar__footer {
+  padding-left: var(--spacing-xxl);
+}
+
+.main-sidebar__company-logo {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* ── Skeleton state ─────────────────────────────────────────────────────── */
+
+.main-sidebar__skeleton-box {
+  flex-shrink: 0;
+  border-radius: var(--radius-s);
+  background-color: var(--color-interactive-secondary-bg-highlighted);
+  animation: sidebar-skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+.main-sidebar__skeleton-box--avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-xs);
+}
+
+.main-sidebar__skeleton-box--regular {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-s);
+}
+
+.main-sidebar__skeleton-box--branded {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-s);
+}
+
+/* Skeleton row — centers the box within the standard 36px tab height */
+.main-sidebar__skeleton-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 36px;
+  flex-shrink: 0;
+  padding: var(--spacing-xsm) var(--spacing-l);
+}
+
+@keyframes sidebar-skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
