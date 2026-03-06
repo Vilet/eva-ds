@@ -133,8 +133,8 @@
   padding: var(--spacing-l) 0 0 0;
 }
 
-/* Force minimized tabs to fill sidebar width */
-.main-sidebar--minimized .tab--nav-icon {
+/* Force minimized tabs to fill sidebar width (extra class beats Tab.css specificity) */
+.main-sidebar--minimized .tab--nav-icon.tab--minimized {
   width: 100%;
 }
 

@@ -87,7 +87,7 @@ export interface ButtonProps {
 | height XXS | 24px (fixed) |
 | padding-x M | `--spacing-m` |
 | padding-x S | `--spacing-sm` |
-| padding-x XS | `--spacing-xsm` |
+| padding-x XS | `--spacing-sm` |
 | padding-x XXS | `--spacing-xsm` |
 | icon/label gap | `--spacing-xsm` |
 

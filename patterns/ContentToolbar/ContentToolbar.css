@@ -1,0 +1,16 @@
+.content-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-xsm) 0;
+}
+
+.content-toolbar__left {
+  flex-shrink: 0;
+}
+
+.content-toolbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}

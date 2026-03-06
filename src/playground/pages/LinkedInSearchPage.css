@@ -1,0 +1,230 @@
+/* ── Page layout ─────────────────────────────────────────────────────────── */
+
+.linkedin-search-page {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.linkedin-search-page__sidebar {
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.linkedin-search-page__secondary-nav {
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.linkedin-search-page__main {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--color-neutral-neutral-8-white);
+}
+
+.linkedin-search-page__body {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0 160px var(--spacing-xxxl);
+}
+
+.linkedin-search-page__content {
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* ── Search section (inline — to be replaced with component) ─────────────── */
+
+.lsp-search-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+  padding-top: var(--spacing-xxl);
+  padding-bottom: var(--spacing-l);
+}
+
+.lsp-search {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-m);
+}
+
+.lsp-search__input {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 48px;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: var(--font-size-body-large);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-large);
+  color: var(--color-neutral-neutral-1);
+  font-family: inherit;
+}
+
+.lsp-search__input::placeholder {
+  color: var(--color-neutral-neutral-4);
+}
+
+/* ── Filter chips (inline — to be replaced with component) ───────────────── */
+
+.lsp-chips {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.lsp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xsm);
+  height: 28px;
+  padding: 0 var(--spacing-sm);
+  border-radius: var(--radius-xxl);
+  border: 1px solid var(--color-surface-sidepanel-border);
+  background-color: var(--color-neutral-neutral-8-white);
+  font-size: var(--font-size-label-small);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-label-small);
+  letter-spacing: var(--letter-spacing-label-small);
+  color: var(--color-neutral-neutral-1);
+  white-space: nowrap;
+  cursor: default;
+}
+
+.lsp-chip__remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--color-neutral-neutral-3);
+  font-size: 14px;
+}
+
+.lsp-chip__remove:hover {
+  color: var(--color-neutral-neutral-1);
+}
+
+/* ── List section ────────────────────────────────────────────────────────── */
+
+.lsp-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Avatar stack (inline — to be replaced with component) ───────────────── */
+
+.lsp-avatar-stack {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.lsp-avatar-stack__img {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--color-neutral-neutral-8-white);
+  flex-shrink: 0;
+}
+
+.lsp-avatar-stack__img + .lsp-avatar-stack__img {
+  margin-left: calc(-1 * var(--spacing-xsm));
+}
+
+/* ── Inline badge (reusing demo-badge patterns from ListRecordPage) ──────── */
+
+.lsp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xsm);
+  height: 20px;
+  padding: 1px var(--spacing-sm);
+  border-radius: 42px;
+  font-size: var(--font-size-label-mini);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-label-mini);
+  letter-spacing: var(--letter-spacing-label-mini);
+  color: var(--color-neutral-neutral-1);
+  white-space: nowrap;
+  flex-shrink: 0;
+  background-color: var(--color-interactive-secondary-bg-hover);
+}
+
+/* ── Meta text ───────────────────────────────────────────────────────────── */
+
+.lsp-meta {
+  font-size: var(--font-size-label-small);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-label-small);
+  letter-spacing: var(--letter-spacing-label-small);
+  color: var(--color-neutral-neutral-3);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.lsp-meta--dark {
+  color: var(--color-neutral-neutral-1);
+}
+
+.lsp-meta .el-icon {
+  font-size: 14px;
+}
+
+/* ── Create new project link ─────────────────────────────────────────────── */
+
+.lsp-create-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xsm);
+  padding: var(--spacing-sm) var(--spacing-sm);
+  font-size: var(--font-size-label-small);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-label-small);
+  letter-spacing: var(--letter-spacing-label-small);
+  color: var(--color-neutral-neutral-3);
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+.lsp-create-link:hover {
+  color: var(--color-neutral-neutral-1);
+}
+
+.lsp-create-link .el-icon {
+  font-size: 14px;
+}
+
+/* ── 32px leading icon for list records ──────────────────────────────────── */
+
+.lsp-icon-32 {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-l);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  background-color: var(--primitives-primary-primary-dark-40-8);
+  color: var(--color-interactive-primary-default);
+}
+
+.lsp-icon-32 .el-icon {
+  font-size: 16px;
+}

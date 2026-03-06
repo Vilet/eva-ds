@@ -11,6 +11,8 @@ import MainSidebarPage from './pages/MainSidebarPage';
 import SecondaryNavPage from './pages/SecondaryNavPage';
 import MainAppbarPage from './pages/MainAppbarPage';
 import ListRecordPage from './pages/ListRecordPage';
+import ContentToolbarPage from './pages/ContentToolbarPage';
+import LinkedInSearchPage from './pages/LinkedInSearchPage';
 
 export interface NavItem {
   id: string;
@@ -47,6 +49,14 @@ export const NAV_CONFIG: NavItem[] = [
       { id: 'secondary-nav',  label: 'Secondary Nav',  path: '/patterns/secondary-nav' },
       { id: 'main-appbar',    label: 'Main Appbar',    path: '/patterns/main-appbar' },
       { id: 'list-record',    label: 'List Record',    path: '/patterns/list-record' },
+      { id: 'content-toolbar', label: 'Content Toolbar', path: '/patterns/content-toolbar' },
+    ],
+  },
+  {
+    id: 'pages',
+    label: 'Pages',
+    children: [
+      { id: 'linkedin-search', label: 'LinkedIn Search', path: '/pages/linkedin-search' },
     ],
   },
 ];
@@ -73,6 +83,8 @@ function collectRoutes(items: NavItem[]): RouteConfig[] {
         case 'secondary-nav':  element = <SecondaryNavPage />; break;
         case 'main-appbar':    element = <MainAppbarPage />;  break;
         case 'list-record':    element = <ListRecordPage />;  break;
+        case 'content-toolbar': element = <ContentToolbarPage />; break;
+        case 'linkedin-search': element = <LinkedInSearchPage />; break;
         default: element = <Navigate to="/" replace />;
       }
       routes.push({ path: item.path, element });

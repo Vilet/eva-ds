@@ -1,0 +1,43 @@
+.content-toolbar-page {
+  max-width: 1200px;
+}
+
+.content-toolbar-page .page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-neutral-neutral-1);
+  margin-bottom: var(--spacing-sm);
+}
+
+.content-toolbar-page .page-subtitle {
+  font-size: 0.9375rem;
+  color: var(--color-neutral-neutral-3);
+  margin-bottom: var(--spacing-xxxl);
+}
+
+.content-toolbar-page .variant-section {
+  margin-bottom: var(--spacing-xxl);
+}
+
+.content-toolbar-page .variant-section__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-neutral-neutral-1);
+  margin-bottom: var(--spacing-sm);
+}
+
+.content-toolbar-demo-row {
+  background-color: var(--color-neutral-neutral-8-white);
+  border: 1px solid var(--color-surface-sidepanel-border);
+  border-radius: var(--radius-l);
+  padding: var(--spacing-xxxl);
+}
+
+.content-toolbar-counter {
+  font-size: var(--font-size-label-small);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-label-small);
+  letter-spacing: var(--letter-spacing-label-small);
+  color: var(--color-neutral-neutral-3);
+  white-space: nowrap;
+}

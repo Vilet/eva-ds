@@ -64,7 +64,7 @@
 
 .btn--xs {
   height: 28px;
-  padding: 0 var(--spacing-xsm);
+  padding: 0 var(--spacing-sm);
   border-radius: var(--radius-xxs);
   font-size: var(--btn-font-size-xs);
   gap: var(--spacing-xxsm);
