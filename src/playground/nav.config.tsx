@@ -13,6 +13,7 @@ import MainAppbarPage from './pages/MainAppbarPage';
 import ListRecordPage from './pages/ListRecordPage';
 import ContentToolbarPage from './pages/ContentToolbarPage';
 import LinkedInSearchPage from './pages/LinkedInSearchPage';
+import ColorCustomizationPage from './pages/ColorCustomizationPage';
 
 export interface NavItem {
   id: string;
@@ -59,6 +60,13 @@ export const NAV_CONFIG: NavItem[] = [
       { id: 'linkedin-search', label: 'LinkedIn Search', path: '/pages/linkedin-search' },
     ],
   },
+  {
+    id: 'tools',
+    label: 'Tools',
+    children: [
+      { id: 'color-customization', label: 'Color Customization', path: '/tools/color-customization' },
+    ],
+  },
 ];
 
 export interface RouteConfig {
@@ -85,6 +93,7 @@ function collectRoutes(items: NavItem[]): RouteConfig[] {
         case 'list-record':    element = <ListRecordPage />;  break;
         case 'content-toolbar': element = <ContentToolbarPage />; break;
         case 'linkedin-search': element = <LinkedInSearchPage />; break;
+        case 'color-customization': element = <ColorCustomizationPage />; break;
         default: element = <Navigate to="/" replace />;
       }
       routes.push({ path: item.path, element });

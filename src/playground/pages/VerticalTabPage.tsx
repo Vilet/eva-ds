@@ -255,26 +255,38 @@ export default function VerticalTabPage() {
 
   return (
     <div className="vertical-tab-page">
-      <h1 className="page-title">Vertical Tab</h1>
-      <p className="page-subtitle">
-        2 variants (default, nav-icon) × 3 sizes × 4 states. Toggle optional elements
-        with the controls bar. Hover and active states marked ↕ are forced for reference.
-      </p>
-
-      <ControlsBar
-        showIcon={showIcon}         onChangeIcon={setShowIcon}
-        showCount={showCount}       onChangeCount={setShowCount}
-        hasChildren={hasChildren}   onChangeChildren={setHasChildren}
-        showActions={showActions}   onChangeActions={setShowActions}
-      />
+      {/* ── Page header ── */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 16, paddingTop: 32, paddingBottom: 24 }}>
+        <h1 style={{
+          fontSize: 45,
+          fontWeight: 500,
+          lineHeight: '52px',
+          letterSpacing: '-0.6075px',
+          color: 'var(--color-neutral-neutral-1)',
+          margin: 0,
+        }}>Vertical Tab</h1>
+        <p style={{
+          fontSize: 14,
+          fontWeight: 400,
+          lineHeight: '20px',
+          letterSpacing: '-0.1px',
+          color: 'var(--color-neutral-neutral-3)',
+          margin: 0,
+        }}>
+          2 variants (default, nav-icon) × 3 sizes × 4 states. Toggle optional elements
+          with the controls bar. Hover and active states marked ↕ are forced for reference.
+        </p>
+      </div>
 
       {/* ── Default — all sizes ── */}
       <section className="variant-section">
-        <h2 className="variant-section__title">Default</h2>
-        <p className="variant-section__desc">
-          Tree-style tab row. Sizes S, M, L × levels 1 and 2.
-          Icon, count, chevron (children) and actions (···) are optional.
-        </p>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">Default</h2>
+          <p className="variant-section__desc">
+            Tree-style tab row. Sizes S, M, L × levels 1 and 2.
+            Icon, count, chevron (children) and actions (···) are optional.
+          </p>
+        </div>
         <StatesMatrix
           sizes={['s', 'm', 'l']}
           icon={icon} count={count}
@@ -284,10 +296,12 @@ export default function VerticalTabPage() {
 
       {/* ── Level 2 ── */}
       <section className="variant-section">
-        <h2 className="variant-section__title">Level 2 (nested)</h2>
-        <p className="variant-section__desc">
-          Same states as Level 1 but indented by <code>--spacing-xl</code>.
-        </p>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">Level 2 (nested)</h2>
+          <p className="variant-section__desc">
+            Same states as Level 1 but indented by <code>--spacing-xl</code>.
+          </p>
+        </div>
         <div className="tab-states-matrix">
           <div className="tab-states-matrix__header">
             <span className="tab-states-matrix__size-col" />
@@ -319,10 +333,12 @@ export default function VerticalTabPage() {
 
       {/* ── Interactive tree demo ── */}
       <section className="variant-section">
-        <h2 className="variant-section__title">Interactive tree</h2>
-        <p className="variant-section__desc">
-          Real expand/collapse and selection. Try clicking rows and chevrons.
-        </p>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">Interactive tree</h2>
+          <p className="variant-section__desc">
+            Real expand/collapse and selection. Try clicking rows and chevrons.
+          </p>
+        </div>
         <div className="interactive-demo-row">
           {(['s', 'm', 'l'] as TabSize[]).map((size) => (
             <div key={size} className="interactive-demo-col">
@@ -335,12 +351,14 @@ export default function VerticalTabPage() {
 
       {/* ── Nav-icon variant ── */}
       <section className="variant-section">
-        <h2 className="variant-section__title">Nav-icon</h2>
-        <p className="variant-section__desc">
-          Icon-based main navigation tab. Two modes: <strong>full-width</strong> (icon box + label)
-          and <strong>minimized</strong> (icon box only, no label — used when the sidebar is collapsed).
-          Active state shows a right-side accent line.
-        </p>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">Nav-icon</h2>
+          <p className="variant-section__desc">
+            Icon-based main navigation tab. Two modes: <strong>full-width</strong> (icon box + label)
+            and <strong>minimized</strong> (icon box only, no label — used when the sidebar is collapsed).
+            Active state shows a right-side accent line.
+          </p>
+        </div>
 
         {/* Full-width states matrix */}
         <p className="nav-icon-mode-label">Full width</p>
@@ -404,6 +422,14 @@ export default function VerticalTabPage() {
           ))}
         </div>
       </section>
+
+      {/* ── Sticky bottom controls panel ── */}
+      <ControlsBar
+        showIcon={showIcon}         onChangeIcon={setShowIcon}
+        showCount={showCount}       onChangeCount={setShowCount}
+        hasChildren={hasChildren}   onChangeChildren={setHasChildren}
+        showActions={showActions}   onChangeActions={setShowActions}
+      />
     </div>
   );
 }

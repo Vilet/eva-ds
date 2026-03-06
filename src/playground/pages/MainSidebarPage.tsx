@@ -78,15 +78,33 @@ export default function MainSidebarPage() {
 
   return (
     <div className="main-sidebar-page">
-      <h1 className="page-title">Main Sidebar</h1>
-      <p className="page-subtitle">
-        Main navigation sidebar pattern with three states: skeleton, minimized (72px), and open (200px).
-        Uses the nav-icon Tab variant. Regular section tabs have transparent icon boxes;
-        branded product tabs have colored icon boxes.
-      </p>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 16, paddingTop: 32, paddingBottom: 24 }}>
+        <h1 style={{
+          fontSize: 45,
+          fontWeight: 500,
+          lineHeight: '52px',
+          letterSpacing: '-0.6075px',
+          color: 'var(--color-neutral-neutral-1)',
+          margin: 0,
+        }}>Main Sidebar</h1>
+        <p style={{
+          fontSize: 14,
+          fontWeight: 400,
+          lineHeight: '20px',
+          letterSpacing: '-0.1px',
+          color: 'var(--color-neutral-neutral-3)',
+          margin: 0,
+        }}>
+          Main navigation sidebar pattern with three states: skeleton, minimized (72px), and open (200px).
+          Uses the nav-icon Tab variant. Regular section tabs have transparent icon boxes;
+          branded product tabs have colored icon boxes.
+        </p>
+      </div>
 
       <section className="variant-section">
-        <h2 className="variant-section__title">All states</h2>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">All states</h2>
+        </div>
         <div className="sidebar-demo-row">
           {states.map((s) => (
             <div key={s} className="sidebar-demo-col">

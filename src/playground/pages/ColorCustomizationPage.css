@@ -1,0 +1,237 @@
+/* ── Page layout ─────────────────────────────────────────────────────────── */
+
+.color-custom-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.color-custom-page__pickers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+.color-custom-page__preview {
+  margin-top: var(--spacing-xxxl);
+}
+
+.color-custom-page__section-title {
+  font-size: var(--font-size-heading-m);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading-m);
+  color: var(--color-neutral-neutral-1);
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-neutral-neutral-5);
+}
+
+/* ── Groups ──────────────────────────────────────────────────────────────── */
+
+.color-custom-page__group {
+  margin-bottom: var(--spacing-xxl);
+}
+
+.color-custom-page__group-title {
+  font-size: var(--font-size-label-med);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-label-med);
+  letter-spacing: var(--letter-spacing-label-med);
+  color: var(--color-neutral-neutral-3);
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-m);
+}
+
+.color-custom-page__row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-m);
+  flex-wrap: wrap;
+}
+
+/* ── Tabs demo ───────────────────────────────────────────────────────────── */
+
+.color-custom-page__tabs-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 280px;
+}
+
+.color-custom-page__nav-demo {
+  display: flex;
+  gap: var(--spacing-xl);
+}
+
+.color-custom-page__nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 220px;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-m);
+  background-color: var(--color-surface-sidepanel-bg);
+  border: 1px solid var(--color-surface-sidepanel-border);
+}
+
+/* ── Surfaces demo ───────────────────────────────────────────────────────── */
+
+.color-custom-page__surfaces {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-m);
+}
+
+.color-custom-page__surface-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xsm);
+  padding: var(--spacing-l);
+  border-radius: var(--radius-m);
+  border: 1px solid var(--color-surface-sidepanel-border);
+}
+
+.color-custom-page__surface-card--sidepanel {
+  background-color: var(--color-surface-sidepanel-bg);
+}
+
+.color-custom-page__surface-card--highlighted {
+  background-color: var(--color-surface-card-bg-highlighted);
+}
+
+.color-custom-page__surface-card--tab-active {
+  background-color: var(--color-surface-tab-active);
+}
+
+.color-custom-page__surface-label {
+  font-size: var(--font-size-label-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-neutral-1);
+}
+
+.color-custom-page__surface-card code {
+  font-size: var(--font-size-label-mini);
+  color: var(--color-neutral-neutral-3);
+}
+
+/* ── Color picker card ───────────────────────────────────────────────────── */
+
+.color-picker-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-l);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-l);
+  border: 1px solid var(--color-neutral-neutral-5);
+  background-color: var(--color-neutral-neutral-8-white);
+}
+
+.color-picker-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xsm);
+}
+
+.color-picker-card__title {
+  font-size: var(--font-size-heading-s);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading-s);
+  color: var(--color-neutral-neutral-1);
+}
+
+.color-picker-card__desc {
+  font-size: var(--font-size-label-small);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-label-small);
+  color: var(--color-neutral-neutral-3);
+}
+
+/* ── Controls ────────────────────────────────────────────────────────────── */
+
+.color-picker-card__controls {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-l);
+}
+
+.color-picker-card__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+}
+
+/* ── react-colorful overrides ────────────────────────────────────────────── */
+
+.color-picker-card__wheel {
+  flex-shrink: 0;
+}
+
+.color-picker-card__wheel .react-colorful {
+  width: 160px;
+  height: 160px;
+}
+
+.color-picker-card__wheel .react-colorful__saturation {
+  border-radius: var(--radius-m) var(--radius-m) 0 0;
+}
+
+.color-picker-card__wheel .react-colorful__hue {
+  height: 12px;
+  border-radius: 0 0 var(--radius-m) var(--radius-m);
+}
+
+.color-picker-card__wheel .react-colorful__saturation-pointer,
+.color-picker-card__wheel .react-colorful__hue-pointer {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+}
+
+/* ── Hex input ───────────────────────────────────────────────────────────── */
+
+.color-picker-card__hex {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xsm);
+}
+
+.color-picker-card__hex-label {
+  font-size: var(--font-size-label-mini);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-label-mini);
+  letter-spacing: var(--letter-spacing-label-mini);
+  color: var(--color-neutral-neutral-3);
+  text-transform: uppercase;
+}
+
+.color-picker-card__hex-input {
+  width: 100px;
+  height: 36px;
+  padding: 0 var(--spacing-sm);
+  border: 1px solid var(--color-neutral-neutral-5);
+  border-radius: var(--radius-s);
+  font-family: monospace;
+  font-size: var(--font-size-label-med);
+  color: var(--color-neutral-neutral-1);
+  background-color: var(--color-neutral-neutral-8-white);
+}
+
+.color-picker-card__hex-input:focus {
+  outline: none;
+  border-color: var(--color-interactive-primary-default);
+  box-shadow: var(--shadow-elev-blue);
+}
+
+/* ── Swatches ────────────────────────────────────────────────────────────── */
+
+.color-picker-card__swatches {
+  display: flex;
+  gap: var(--spacing-xsm);
+}
+
+.color-picker-card__swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--color-neutral-neutral-5);
+}

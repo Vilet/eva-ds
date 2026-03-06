@@ -47,8 +47,8 @@
 
 /* ── Level indentation ───────────────────────────────────────────────────── */
 .tab--level-2 {
-  /* Align with level-1 content: tab padding (8) + chevron box (20) + row-btn gap (4) = 32px */
-  padding-left: calc(var(--spacing-sm) + 20px + var(--spacing-xsm));
+  /* Align with level-1 content: tab padding (8) + chevron box (20) + row-btn gap (12) = 40px */
+  padding-left: calc(var(--spacing-sm) + 20px + var(--spacing-m));
 }
 
 /* ── Main row button ─────────────────────────────────────────────────────── */

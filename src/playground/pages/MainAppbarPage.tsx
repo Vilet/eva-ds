@@ -15,15 +15,33 @@ const DEMO_AVATARS = [
 export default function MainAppbarPage() {
   return (
     <div className="main-appbar-page">
-      <h1 className="page-title">Main Appbar</h1>
-      <p className="page-subtitle">
-        Top-level application bar with breadcrumb navigation and contextual controls.
-        Content on the right side is dynamic and depends on the module/page context.
-      </p>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 16, paddingTop: 32, paddingBottom: 24 }}>
+        <h1 style={{
+          fontSize: 45,
+          fontWeight: 500,
+          lineHeight: '52px',
+          letterSpacing: '-0.6075px',
+          color: 'var(--color-neutral-neutral-1)',
+          margin: 0,
+        }}>Main Appbar</h1>
+        <p style={{
+          fontSize: 14,
+          fontWeight: 400,
+          lineHeight: '20px',
+          letterSpacing: '-0.1px',
+          color: 'var(--color-neutral-neutral-3)',
+          margin: 0,
+        }}>
+          Top-level application bar with breadcrumb navigation and contextual controls.
+          Content on the right side is dynamic and depends on the module/page context.
+        </p>
+      </div>
 
       {/* ── Full controls ─────────────────────────────────────────────── */}
       <section className="variant-section">
-        <h2 className="variant-section__title">All controls</h2>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">All controls</h2>
+        </div>
         <div className="main-appbar-demo-row">
           <MainAppbar breadcrumbs={[{ label: 'Data' }, { label: 'Templates' }]}>
             <AppbarAvatarGroup avatars={DEMO_AVATARS} count={8} />
@@ -58,7 +76,9 @@ export default function MainAppbarPage() {
 
       {/* ── Actions only (no avatar group, no automations) ────────────── */}
       <section className="variant-section">
-        <h2 className="variant-section__title">Actions only</h2>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">Actions only</h2>
+        </div>
         <div className="main-appbar-demo-row">
           <MainAppbar breadcrumbs={[{ label: 'Data' }, { label: 'Templates' }]}>
             <AppbarAction
@@ -90,7 +110,9 @@ export default function MainAppbarPage() {
 
       {/* ── Long breadcrumbs ──────────────────────────────────────────── */}
       <section className="variant-section">
-        <h2 className="variant-section__title">Long breadcrumbs</h2>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">Long breadcrumbs</h2>
+        </div>
         <div className="main-appbar-demo-row">
           <MainAppbar
             breadcrumbs={[
@@ -119,7 +141,9 @@ export default function MainAppbarPage() {
 
       {/* ── Breadcrumbs only ──────────────────────────────────────────── */}
       <section className="variant-section">
-        <h2 className="variant-section__title">Breadcrumbs only</h2>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">Breadcrumbs only</h2>
+        </div>
         <div className="main-appbar-demo-row">
           <MainAppbar
             breadcrumbs={[{ label: 'Data' }, { label: 'Templates' }]}
@@ -129,7 +153,9 @@ export default function MainAppbarPage() {
 
       {/* ── With automation only ──────────────────────────────────────── */}
       <section className="variant-section">
-        <h2 className="variant-section__title">With automation</h2>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">With automation</h2>
+        </div>
         <div className="main-appbar-demo-row">
           <MainAppbar breadcrumbs={[{ label: 'Assessments' }, { label: 'Flow Builder' }]}>
             <AppbarAutomation count={1} />

@@ -43,14 +43,32 @@ function ToolbarActions() {
 export default function ContentToolbarPage() {
   return (
     <div className="content-toolbar-page">
-      <h1 className="page-title">Content Toolbar</h1>
-      <p className="page-subtitle">
-        Top-level toolbar that sits below the page title and above content.
-        The number of controls on the right side varies depending on context.
-      </p>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 16, paddingTop: 32, paddingBottom: 24 }}>
+        <h1 style={{
+          fontSize: 45,
+          fontWeight: 500,
+          lineHeight: '52px',
+          letterSpacing: '-0.6075px',
+          color: 'var(--color-neutral-neutral-1)',
+          margin: 0,
+        }}>Content Toolbar</h1>
+        <p style={{
+          fontSize: 14,
+          fontWeight: 400,
+          lineHeight: '20px',
+          letterSpacing: '-0.1px',
+          color: 'var(--color-neutral-neutral-3)',
+          margin: 0,
+        }}>
+          Top-level toolbar that sits below the page title and above content.
+          The number of controls on the right side varies depending on context.
+        </p>
+      </div>
 
       <section className="variant-section">
-        <h2 className="variant-section__title">With table record counter</h2>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">With table record counter</h2>
+        </div>
         <div className="content-toolbar-demo-row">
           <ContentToolbar left={<RecordCounter />}>
             <ToolbarActions />
@@ -59,7 +77,9 @@ export default function ContentToolbarPage() {
       </section>
 
       <section className="variant-section">
-        <h2 className="variant-section__title">With dropdown to switch the context</h2>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">With dropdown to switch the context</h2>
+        </div>
         <div className="content-toolbar-demo-row">
           <ContentToolbar left={<ContextDropdown />}>
             <ToolbarActions />
@@ -68,7 +88,9 @@ export default function ContentToolbarPage() {
       </section>
 
       <section className="variant-section">
-        <h2 className="variant-section__title">Actions only (no left content)</h2>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">Actions only (no left content)</h2>
+        </div>
         <div className="content-toolbar-demo-row">
           <ContentToolbar>
             <ToolbarActions />

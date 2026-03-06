@@ -72,19 +72,21 @@ interface StatesDemoProps {
 }
 
 function StatesMatrix({ variant, sizes, iconLeft, iconRight }: StatesDemoProps) {
-  const cols = ['Default', 'Hover ↕', 'Active ↕', 'Disabled', 'Loading', 'Icon-only'];
-
   return (
     <div className="states-matrix">
       <div className="states-matrix__header">
-        {cols.map((col) => (
-          <span key={col} className="states-matrix__col-label">{col}</span>
-        ))}
+        <span className="states-matrix__col-label" />
+        <span className="states-matrix__col-label">Default</span>
+        <span className="states-matrix__col-label">Hover</span>
+        <span className="states-matrix__col-label">Active</span>
+        <span className="states-matrix__col-label">Disabled</span>
+        <span className="states-matrix__col-label">Loading</span>
+        <span className="states-matrix__col-label">Icon only</span>
       </div>
 
       {sizes.map((size) => (
         <div key={size} className="states-matrix__row">
-          <span className="states-matrix__size-label">{size.toUpperCase()}</span>
+          <span className="states-matrix__size-label">{size.toUpperCase()} size</span>
 
           {/* Default */}
           <div className="states-matrix__cell">
@@ -140,47 +142,68 @@ export default function ButtonPage() {
 
   return (
     <div className="button-page">
-      <h1 className="page-title">Button</h1>
-      <p className="page-subtitle">
-        5 variants × 4 sizes × 6 states. Toggle leading/trailing icons using the controls bar.
-        Hover and active states marked ↕ are forced visually for reference — try the real ones too.
-      </p>
-
-      <ControlsBar
-        showIconLeft={showIconLeft}
-        showIconRight={showIconRight}
-        onChangeIconLeft={setShowIconLeft}
-        onChangeIconRight={setShowIconRight}
-      />
+      {/* ── Page header ── */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 16, paddingTop: 32, paddingBottom: 24 }}>
+        <h1 style={{
+          fontSize: 45,
+          fontWeight: 500,
+          lineHeight: '52px',
+          letterSpacing: '-0.6075px',
+          color: 'var(--color-neutral-neutral-1)',
+          margin: 0,
+        }}>Buttons</h1>
+        <p style={{
+          fontSize: 14,
+          fontWeight: 400,
+          lineHeight: '20px',
+          letterSpacing: '-0.1px',
+          color: 'var(--color-neutral-neutral-3)',
+          margin: 0,
+        }}>
+          Page description...The toolbar appears on almost every page, it is located usually right below the page title component and appears above the page content like data table or other content display style. The number of controls on the right side may vary depending on the context.
+        </p>
+      </div>
 
       {/* ── Primary ── */}
       <section className="variant-section">
-        <h2 className="variant-section__title">Primary</h2>
-        <p className="variant-section__desc">Filled button. Sizes M and S. Use at most one per view.</p>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">Primary</h2>
+          <p className="variant-section__desc">
+            Page description...The toolbar appears on almost every page, it is located usually right below the page title component and appears above the page
+          </p>
+        </div>
         <StatesMatrix variant="primary" sizes={['m', 's']} iconLeft={iconLeft} iconRight={iconRight} />
       </section>
 
       {/* ── Secondary ── */}
       <section className="variant-section">
-        <h2 className="variant-section__title">Secondary</h2>
-        <p className="variant-section__desc">Bordered button. Sizes M, S, XS.</p>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">Secondary</h2>
+          <p className="variant-section__desc">
+            Page description...The toolbar appears on almost every page, it is located usually right below the page title component and appears above the page
+          </p>
+        </div>
         <StatesMatrix variant="secondary" sizes={['m', 's', 'xs']} iconLeft={iconLeft} iconRight={iconRight} />
       </section>
 
       {/* ── Ghost ── */}
       <section className="variant-section">
-        <h2 className="variant-section__title">Ghost</h2>
-        <p className="variant-section__desc">No fill, no border. Sizes M, S, XS, XXS. Use XXS for breadcrumbs only.</p>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">Ghost</h2>
+          <p className="variant-section__desc">No fill, no border. Sizes M, S, XS, XXS. Use XXS for breadcrumbs only.</p>
+        </div>
         <StatesMatrix variant="ghost" sizes={['m', 's', 'xs', 'xxs']} iconLeft={iconLeft} iconRight={iconRight} />
       </section>
 
       {/* ── Solo-floating ── */}
       <section className="variant-section">
-        <h2 className="variant-section__title">Solo-floating</h2>
-        <p className="variant-section__desc">
-          Elevated icon-only button — always icon-only, unaffected by controls.
-          Appears on card hover. Sizes S and XS. No disabled or loading states.
-        </p>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">Solo-floating</h2>
+          <p className="variant-section__desc">
+            Elevated icon-only button — always icon-only, unaffected by controls.
+            Appears on card hover. Sizes S and XS. No disabled or loading states.
+          </p>
+        </div>
         <div className="solo-floating-demo">
           <div className="solo-floating-demo__group">
             <span className="demo-label">S — Default</span>
@@ -203,11 +226,13 @@ export default function ButtonPage() {
 
       {/* ── Wrapped ── */}
       <section className="variant-section">
-        <h2 className="variant-section__title">Wrapped (ButtonBar)</h2>
-        <p className="variant-section__desc">
-          Icon-only buttons inside an elevated bar — always icon-only, unaffected by controls.
-          Appears on card/table row hover. The elevation is on the container. Sizes S, XS, XXS.
-        </p>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">Wrapped (ButtonBar)</h2>
+          <p className="variant-section__desc">
+            Icon-only buttons inside an elevated bar — always icon-only, unaffected by controls.
+            Appears on card/table row hover. The elevation is on the container. Sizes S, XS, XXS.
+          </p>
+        </div>
         <div className="buttonbar-demo">
           <div className="buttonbar-demo__label">S size bar</div>
           <div className="btn-bar">
@@ -231,10 +256,12 @@ export default function ButtonPage() {
 
       {/* ── Focus-visible ── */}
       <section className="variant-section">
-        <h2 className="variant-section__title">Focus-visible</h2>
-        <p className="variant-section__desc">
-          Tab to these buttons to see the focus ring (<code>--shadow-elev-blue</code>).
-        </p>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">Focus-visible</h2>
+          <p className="variant-section__desc">
+            Tab to these buttons to see the focus ring (<code>--shadow-elev-blue</code>).
+          </p>
+        </div>
         <div className="focus-demo">
           <Button variant="primary"       size="m" label="Tab to me" iconLeft={iconLeft} />
           <Button variant="secondary"     size="m" label="Tab to me" iconLeft={iconLeft} />
@@ -242,6 +269,14 @@ export default function ButtonPage() {
           <Button variant="solo-floating" size="s" iconLeft={<Icon name="plus-ultra" />} ariaLabel="Tab to me" />
         </div>
       </section>
+
+      {/* ── Sticky bottom controls panel ── */}
+      <ControlsBar
+        showIconLeft={showIconLeft}
+        showIconRight={showIconRight}
+        onChangeIconLeft={setShowIconLeft}
+        onChangeIconRight={setShowIconRight}
+      />
     </div>
   );
 }

@@ -6,12 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:app": "tsc -b && vite build --config vite.app.config.ts",
     "lint": "eslint .",
     "preview": "vite preview",
     "build:tokens": "style-dictionary build --config config.js"
   },
   "dependencies": {
     "react": "^19.2.0",
+    "react-colorful": "^5.6.1",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.13.1"
   },

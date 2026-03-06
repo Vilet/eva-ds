@@ -84,15 +84,33 @@ export default function SecondaryNavPage() {
 
   return (
     <div className="secondary-nav-page">
-      <h1 className="page-title">Secondary Navigation Panel</h1>
-      <p className="page-subtitle">
-        Module navigation panel that sits next to the main sidebar.
-        General structure is unified; tab sections change dynamically per module context.
-        Header height matches the main nav bar for visual alignment.
-      </p>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 16, paddingTop: 32, paddingBottom: 24 }}>
+        <h1 style={{
+          fontSize: 45,
+          fontWeight: 500,
+          lineHeight: '52px',
+          letterSpacing: '-0.6075px',
+          color: 'var(--color-neutral-neutral-1)',
+          margin: 0,
+        }}>Secondary Navigation Panel</h1>
+        <p style={{
+          fontSize: 14,
+          fontWeight: 400,
+          lineHeight: '20px',
+          letterSpacing: '-0.1px',
+          color: 'var(--color-neutral-neutral-3)',
+          margin: 0,
+        }}>
+          Module navigation panel that sits next to the main sidebar.
+          General structure is unified; tab sections change dynamically per module context.
+          Header height matches the main nav bar for visual alignment.
+        </p>
+      </div>
 
       <section className="variant-section">
-        <h2 className="variant-section__title">Profiles Database</h2>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">Profiles Database</h2>
+        </div>
         <div className="secondary-nav-demo-row">
           <div className="secondary-nav-demo-col">
             <SecondaryNav
@@ -107,7 +125,9 @@ export default function SecondaryNavPage() {
       </section>
 
       <section className="variant-section">
-        <h2 className="variant-section__title">Hiring Pipelines</h2>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">Hiring Pipelines</h2>
+        </div>
         <div className="secondary-nav-demo-row">
           <div className="secondary-nav-demo-col">
             <SecondaryNav

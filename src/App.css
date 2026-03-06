@@ -1,7 +1,6 @@
 /* Playground shell layout */
 :root {
-  --playground-sidebar-width: 260px;
-  --playground-topbar-height: 52px;
+  --playground-topbar-height: 56px;
 }
 
 #root {
@@ -17,14 +16,57 @@
   position: relative;
 }
 
+/* ── Content wrapper (appbar + page) ── */
+.playground-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  height: 100vh;
+}
+
 /* ── Content area ── */
 .playground-content {
   flex: 1;
   min-width: 0;
-  padding: var(--spacing-xxxl);
-  background-color: var(--color-neutral-neutral-7);
+  padding: 0 140px;
+  background-color: var(--color-neutral-neutral-8-white);
   overflow-y: auto;
-  height: 100vh;
+}
+
+/* ── Hide empty section titles in secondary nav ── */
+.secondary-nav__section-title:empty {
+  display: none;
+}
+
+/* ── Tooltips for minimized sidebar tabs ── */
+.main-sidebar--minimized .tab--nav-icon {
+  position: relative;
+}
+
+.main-sidebar--minimized .tab--nav-icon::before {
+  content: attr(aria-label);
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 4px 8px;
+  background-color: var(--color-neutral-neutral-1);
+  color: var(--color-neutral-neutral-8-white);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: -0.15px;
+  white-space: nowrap;
+  border-radius: var(--radius-xs);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+  z-index: 100;
+}
+
+.main-sidebar--minimized .tab--nav-icon:hover::before {
+  opacity: 1;
 }
 
 /* ── Mobile hamburger button ── */

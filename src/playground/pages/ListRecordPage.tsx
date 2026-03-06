@@ -33,13 +33,31 @@ function ActionButtons() {
 export default function ListRecordPage() {
   return (
     <div className="list-record-page">
-      <h1 className="page-title">List Record</h1>
-      <p className="page-subtitle">
-        Alternative data-view style for table records. Hover to see floating actions.
-      </p>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 16, paddingTop: 32, paddingBottom: 24 }}>
+        <h1 style={{
+          fontSize: 45,
+          fontWeight: 500,
+          lineHeight: '52px',
+          letterSpacing: '-0.6075px',
+          color: 'var(--color-neutral-neutral-1)',
+          margin: 0,
+        }}>List Record</h1>
+        <p style={{
+          fontSize: 14,
+          fontWeight: 400,
+          lineHeight: '20px',
+          letterSpacing: '-0.1px',
+          color: 'var(--color-neutral-neutral-3)',
+          margin: 0,
+        }}>
+          Alternative data-view style for table records. Hover to see floating actions.
+        </p>
+      </div>
 
       <section className="variant-section">
-        <h2 className="variant-section__title">LinkedIn project context</h2>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">LinkedIn project context</h2>
+        </div>
         <div className="list-record-demo-row">
         {/* Default */}
         <ListRecord
@@ -75,7 +93,9 @@ export default function ListRecordPage() {
       </section>
 
       <section className="variant-section">
-        <h2 className="variant-section__title">Position context</h2>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">Position context</h2>
+        </div>
         <div className="list-record-demo-row">
         <ListRecord
           leadingIcon={<DemoIcon variant="secondary" />}
@@ -126,7 +146,9 @@ export default function ListRecordPage() {
       </section>
 
       <section className="variant-section">
-        <h2 className="variant-section__title">Without leading icon</h2>
+        <div className="variant-section__header">
+          <h2 className="variant-section__title">Without leading icon</h2>
+        </div>
         <div className="list-record-demo-row">
         <ListRecord
           title="Simple record without an icon"

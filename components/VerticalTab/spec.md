@@ -89,7 +89,7 @@ No disabled or loading states — not in the Figma spec.
 | Chevron (default) | `--color-neutral-neutral-2` |
 | Border radius | `--radius-xs` (all sizes — S, M, L) |
 | Tab height | S: 28px, M/L: 32px (component-scoped `--tab-height`) |
-| Level-2 indent | `calc(--spacing-sm + 20px + --spacing-xsm)` — aligns with level-1 content past chevron |
+| Level-2 indent | `calc(--spacing-sm + 20px + --spacing-m)` — aligns with level-1 content past chevron (padding + chevron box + row-btn gap) |
 | Outer L/R padding | `--spacing-sm` (on `.tab` root) |
 | Content row gap | `--spacing-xsm` (inside `tab__row-btn`) |
 | Sibling gap (btn / count / actions) | `--spacing-sm` (gap on `.tab` root) |
