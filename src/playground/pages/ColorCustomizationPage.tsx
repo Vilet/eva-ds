@@ -1,9 +1,8 @@
 import { useState, useMemo, type CSSProperties } from 'react';
 import { HexColorPicker } from 'react-colorful';
 import './ColorCustomizationPage.css';
-import Button from '../../../components/Button/Button';
-import Icon from '../../../components/Icon/Icon';
-import Tab from '../../../components/VerticalTab/Tab';
+import './MailboxPreview.css';
+import MailboxPreview from './MailboxPreview';
 
 /* ── Color math helpers ─────────────────────────────────────────────────── */
 
@@ -128,14 +127,30 @@ export default function ColorCustomizationPage() {
   return (
     <div className="color-custom-page">
       <div style={{ display: 'flex', flexDirection: 'column', gap: 16, paddingTop: 32, paddingBottom: 24 }}>
-        <h1 style={{
-          fontSize: 45,
-          fontWeight: 500,
-          lineHeight: '52px',
-          letterSpacing: '-0.6075px',
-          color: 'var(--color-neutral-neutral-1)',
-          margin: 0,
-        }}>Color Customization</h1>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <div style={{
+            width: 42,
+            height: 42,
+            borderRadius: 12,
+            backgroundColor: 'var(--color-interactive-secondary-bg-active)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0,
+          }}>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M10 2C10 2 4 9 4 13a6 6 0 0 0 12 0c0-4-6-11-6-11Z" fill="var(--color-neutral-neutral-1)" />
+            </svg>
+          </div>
+          <h1 style={{
+            fontSize: 45,
+            fontWeight: 500,
+            lineHeight: '52px',
+            letterSpacing: '-0.6075px',
+            color: 'var(--color-neutral-neutral-1)',
+            margin: 0,
+          }}>Color customization</h1>
+        </div>
         <p style={{
           fontSize: 14,
           fontWeight: 400,
@@ -149,108 +164,26 @@ export default function ColorCustomizationPage() {
         </p>
       </div>
 
-      {/* ── Color pickers ──────────────────────────────────────────────── */}
-      <div className="color-custom-page__pickers">
-        <ColorPickerCard
-          label="Primary"
-          description="Main action buttons, links, active indicators"
-          value={primaryColor}
-          onChange={setPrimaryColor}
-        />
-        <ColorPickerCard
-          label="Secondary"
-          description="Surfaces, side panels, tab backgrounds"
-          value={secondaryColor}
-          onChange={setSecondaryColor}
-        />
-      </div>
-
-      {/* ── Live preview (scoped overrides) ────────────────────────────── */}
-      <div className="color-custom-page__preview" style={overrides}>
-        <h2 className="color-custom-page__section-title">Live Preview</h2>
-
-        {/* Buttons */}
-        <div className="color-custom-page__group">
-          <h3 className="color-custom-page__group-title">Buttons</h3>
-          <div className="color-custom-page__row">
-            <Button variant="primary" size="m" label="Primary M" />
-            <Button variant="primary" size="s" label="Primary S" />
-            <Button
-              variant="primary"
-              size="m"
-              label="With icon"
-              iconLeft={<Icon name="plus-ultra" />}
-            />
-            <Button variant="secondary" size="m" label="Secondary M" />
-            <Button variant="secondary" size="s" label="Secondary S" />
-            <Button variant="ghost" size="m" label="Ghost M" />
-            <Button variant="ghost" size="s" label="Ghost S" />
-          </div>
+      {/* ── Preview with floating picker cards ─────────────────────── */}
+      <div className="color-custom-page__body">
+        <div className="color-custom-page__preview-frame" style={overrides}>
+          <MailboxPreview />
         </div>
 
-        {/* Tabs */}
-        <div className="color-custom-page__group">
-          <h3 className="color-custom-page__group-title">Vertical Tabs</h3>
-          <div className="color-custom-page__tabs-demo">
-            <Tab size="m" label="Default tab" icon={<Icon name="home2-ultra" />} />
-            <Tab size="m" label="Active tab" icon={<Icon name="search-ultra" />} isActive />
-            <Tab size="m" label="With count" icon={<Icon name="list-layout-ultra" />} count={42} />
-          </div>
-        </div>
-
-        {/* Nav-icon tabs (sidebar style) */}
-        <div className="color-custom-page__group">
-          <h3 className="color-custom-page__group-title">Sidebar Nav Tabs</h3>
-          <div className="color-custom-page__nav-demo">
-            <div className="color-custom-page__nav-col">
-              <Tab
-                size="m"
-                variant="nav-icon"
-                label="Overview"
-                icon={<Icon name="home2-ultra" />}
-                hasIconBoxBg={false}
-              />
-              <Tab
-                size="m"
-                variant="nav-icon"
-                label="Search"
-                icon={<Icon name="search-ultra" />}
-                hasIconBoxBg={false}
-                isActive
-              />
-              <Tab
-                size="m"
-                variant="nav-icon"
-                label="Hiring"
-                icon={<Icon name="pipelines-fill" />}
-              />
-              <Tab
-                size="m"
-                variant="nav-icon"
-                label="Assessments"
-                icon={<Icon name="video-fill" />}
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Surface & border tokens */}
-        <div className="color-custom-page__group">
-          <h3 className="color-custom-page__group-title">Surfaces &amp; Borders</h3>
-          <div className="color-custom-page__surfaces">
-            <div className="color-custom-page__surface-card color-custom-page__surface-card--sidepanel">
-              <span className="color-custom-page__surface-label">Side panel bg</span>
-              <code>--color-surface-sidepanel-bg</code>
-            </div>
-            <div className="color-custom-page__surface-card color-custom-page__surface-card--highlighted">
-              <span className="color-custom-page__surface-label">Card highlighted</span>
-              <code>--color-surface-card-bg-highlighted</code>
-            </div>
-            <div className="color-custom-page__surface-card color-custom-page__surface-card--tab-active">
-              <span className="color-custom-page__surface-label">Tab active</span>
-              <code>--color-surface-tab-active</code>
-            </div>
-          </div>
+        {/* Floating color picker cards */}
+        <div className="color-custom-page__pickers">
+          <ColorPickerCard
+            label="Primary"
+            description="Main action buttons, links, active indicators"
+            value={primaryColor}
+            onChange={setPrimaryColor}
+          />
+          <ColorPickerCard
+            label="Secondary"
+            description="Surfaces, side panels, tab backgrounds"
+            value={secondaryColor}
+            onChange={setSecondaryColor}
+          />
         </div>
       </div>
     </div>
