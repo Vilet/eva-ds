@@ -13,6 +13,7 @@ import ContentToolbar from '../../../patterns/ContentToolbar/ContentToolbar';
 import ListRecord from '../../../patterns/ListRecord/ListRecord';
 import Button from '../../../components/Button/Button';
 import Icon from '../../../components/Icon/Icon';
+import HeroInlineSearch from '../../../patterns/HeroInlineSearch/HeroInlineSearch';
 
 /* ── Sidebar nav data ────────────────────────────────────────────────────── */
 
@@ -131,6 +132,10 @@ const PROJECTS: ProjectRow[] = [
   { id: '8', title: 'HR Generalist, Jordan, Amman',        syncText: 'Last synced on 11 Mar, 17:14', owner: 'John Heidenreich',  profileCount: 12,  avatarCount: 7 },
   { id: '9', title: 'Senior Software Developer, Urgent',   syncText: 'Last synced on 11 Mar, 17:14', owner: 'Loren Mueller',     profileCount: 34,  avatarCount: 2 },
   { id: '10', title: 'QA Automation, Jordan',              syncText: 'Last synced on 11 Mar, 17:14', owner: 'Penny Torp III',    profileCount: 12,  avatarCount: 8 },
+  { id: '11', title: 'Product Manager, Dubai',             syncText: 'Last synced on 10 Mar, 09:30', frequency: 'Daily',         owner: 'Sarah Al-Rashid',   profileCount: 45,  avatarCount: 5 },
+  { id: '12', title: 'DevOps Engineer, Remote',            syncText: 'Last synced on 10 Mar, 14:22', owner: 'Marcus Chen',       profileCount: 67,  avatarCount: 3 },
+  { id: '13', title: 'Data Scientist, Riyadh',             syncText: 'Last synced on 09 Mar, 11:05', frequency: 'Every 3 days',  owner: 'Fatima Kazemi',     profileCount: 23,  avatarCount: 6 },
+  { id: '14', title: 'UX Researcher, Beirut',              syncText: 'Last synced on 09 Mar, 16:48', owner: 'Nadia Haddad',      profileCount: 18,  avatarCount: 4 },
 ];
 
 /* ── Inline sub-components (to be replaced with real components later) ──── */
@@ -143,23 +148,16 @@ function LinkedInIcon() {
   );
 }
 
-function SearchSection() {
+function SearchSection({ value, onChange }: { value: string; onChange: (v: string) => void }) {
   return (
     <div className="lsp-search-section">
-      <div className="lsp-search">
-        <input
-          className="lsp-search__input"
-          type="text"
-          placeholder="Search by keywords, e.g. Software Engineer, Amman.."
-        />
-        <Button variant="primary" size="m" label="Search" />
-      </div>
+      <HeroInlineSearch value={value} onChange={(e) => onChange(e.target.value)} />
       <div className="lsp-chips">
         {FILTER_CHIPS.map((chip) => (
           <span key={chip} className="lsp-chip">
             {chip}
             <button type="button" className="lsp-chip__remove" aria-label={`Remove ${chip}`}>
-              <Icon name="x-ultra" />
+              <Icon name="plus-ultra" />
             </button>
           </span>
         ))}
@@ -185,8 +183,8 @@ function AvatarStack({ count }: { count: number }) {
   );
 }
 
-function RecordCounter() {
-  return <span className="lsp-meta">Saved projects &middot; 12</span>;
+function RecordCounter({ count }: { count: number }) {
+  return <span className="lsp-meta">Saved projects &middot; {count}</span>;
 }
 
 function ToolbarActions() {
@@ -244,6 +242,11 @@ function ProjectRecord({ project }: { project: ProjectRow }) {
 export default function LinkedInSearchPage() {
   const [sidebarActiveId, setSidebarActiveId] = useState('linkedin');
   const [secondaryActiveId, setSecondaryActiveId] = useState('linkedin-search');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredProjects = searchQuery
+    ? PROJECTS.filter((p) => p.title.toLowerCase().includes(searchQuery.toLowerCase()))
+    : PROJECTS;
 
   return (
     <div className="linkedin-search-page">
@@ -302,14 +305,14 @@ export default function LinkedInSearchPage() {
 
         <div className="linkedin-search-page__body">
           <div className="linkedin-search-page__content">
-            <SearchSection />
+            <SearchSection value={searchQuery} onChange={setSearchQuery} />
 
-            <ContentToolbar left={<RecordCounter />}>
+            <ContentToolbar left={<RecordCounter count={filteredProjects.length} />}>
               <ToolbarActions />
             </ContentToolbar>
 
             <div className="lsp-list">
-              {PROJECTS.map((project) => (
+              {filteredProjects.map((project) => (
                 <ProjectRecord key={project.id} project={project} />
               ))}
 
