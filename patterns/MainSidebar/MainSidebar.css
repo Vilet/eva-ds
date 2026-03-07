@@ -199,6 +199,14 @@
   background-color: var(--color-surface-sidepanel-border);
 }
 
+/* ── Branded gradient icon (enfinity-logo) ─────────────────────────────── */
+.main-sidebar .el-enfinity-logo {
+  background: linear-gradient(180deg, #FFA764 0%, #807DE2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* ── Footer (company logo) ──────────────────────────────────────────────── */
 
 .main-sidebar__footer {

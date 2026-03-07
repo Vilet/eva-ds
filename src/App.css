@@ -39,6 +39,11 @@
   display: none;
 }
 
+/* ── Hide avatar background in playground sidebar ── */
+.playground-shell > .main-sidebar .main-sidebar__avatar {
+  background-color: transparent;
+}
+
 /* ── Tooltips for minimized sidebar tabs ── */
 .main-sidebar--minimized .tab--nav-icon {
   position: relative;

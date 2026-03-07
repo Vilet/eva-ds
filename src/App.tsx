@@ -160,6 +160,13 @@ export default function App() {
         state="minimized"
         groups={MAIN_SIDEBAR_GROUPS}
         activeId="ds"
+        branchAvatar={
+          <svg width="12" height="14" viewBox="0 0 12 14" fill="none">
+            <path d="M0 13.9755H11.5283V11.4785H0V13.9755Z" fill="#1C1D21" />
+            <path d="M11.5283 8.23632V5.73925H0V8.23632H11.5283Z" fill="#1C1D21" />
+            <path d="M0 2.49707H11.5283V0H0V2.49707Z" fill="#1C1D21" />
+          </svg>
+        }
       />
 
       {/* Secondary navigation using our SecondaryNav pattern */}
