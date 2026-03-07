@@ -18,7 +18,7 @@ const NAV_GROUPS: SidebarNavGroup[] = [
       { id: 'overview', label: 'Overview', icon: 'home2-ultra', type: 'regular' },
       { id: 'eva-agent', label: 'Eva agent', icon: 'enfinity-logo', type: 'regular' },
       { id: 'search', label: 'Search', icon: 'search-ultra', type: 'regular' },
-      { id: 'analytics', label: 'Analytics', icon: 'analytics-v2-fill', type: 'regular' },
+      { id: 'analytics', label: 'Analytics', icon: 'activity-ultra', type: 'regular' },
     ],
   },
   {

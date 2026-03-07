@@ -24,7 +24,7 @@ const NAV_GROUPS: SidebarNavGroup[] = [
       { id: 'overview',   label: 'Overview',   icon: 'home2-ultra',       type: 'regular' },
       { id: 'eva-agent',  label: 'Eva agent', icon: 'enfinity-logo',     type: 'regular' },
       { id: 'search',     label: 'Search',    icon: 'search-ultra',      type: 'regular' },
-      { id: 'analytics',  label: 'Analytics', icon: 'analytics-v2-fill', type: 'regular' },
+      { id: 'analytics',  label: 'Analytics', icon: 'activity-ultra', type: 'regular' },
     ],
   },
   {
@@ -83,7 +83,7 @@ const SECONDARY_SECTIONS: SecondaryNavSection[] = [
     id: 'linkedin-mapping',
     title: 'LinkedIn Talent Mapping',
     items: [
-      { id: 'linkedin-search', label: 'LinkedIn Search',              icon: 'search-ultra' },
+      { id: 'linkedin-search', label: 'LinkedIn Search',              icon: 'browse-ultra' },
       { id: 'hr-generalist',   label: 'HR Generalist, Jordan, Amma', icon: 'folder-ultra' },
       { id: 'qa-automation',   label: 'QA Automation, Jordan',       icon: 'folder-ultra' },
       { id: 'sr-sw-dev',       label: 'Senior Software Develop',     icon: 'folder-ultra' },
